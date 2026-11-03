@@ -1438,6 +1438,8 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-bottom: 10px;
 }
 
@@ -1447,6 +1449,42 @@ label {
     gap: 8px;
     font-size: 0.9rem;
     color: var(--color-charcoal);
+}
+
+.map-controls-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-layer-pills {
+    display: flex;
+    background: #F1EDF5;
+    border-radius: 6px;
+    padding: 2px;
+    gap: 2px;
+}
+
+.map-pill-btn {
+    background: transparent;
+    border: none;
+    color: #64748B;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.map-pill-btn:hover {
+    color: var(--color-plum);
+}
+
+.map-pill-btn.active {
+    background: #FFFFFF;
+    color: var(--color-plum);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
 
 .btn-map-reset {
@@ -1464,6 +1502,16 @@ label {
 .btn-map-reset:hover {
     background: var(--color-plum);
     color: #FFFFFF;
+}
+
+/* Ensure Leaflet tile images render cleanly without distortion */
+.leaflet-container img {
+    max-width: none !important;
+    max-height: none !important;
+}
+
+.leaflet-container {
+    background: #e2e8f0;
 }
 
 /* Custom Leaflet Marker Pulse */

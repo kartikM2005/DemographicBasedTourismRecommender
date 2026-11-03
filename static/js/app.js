@@ -498,6 +498,56 @@ function filterResults(filterType, btnElement) {
 // Real Interactive India Geospatial Map Logic (Leaflet.js)
 let leafletMap = null;
 let mapMarkersGroup = null;
+let currentBaseLayerKey = 'voyager';
+let currentTileLayer = null;
+
+const mapBaseLayers = {
+    voyager: {
+        name: 'Street View',
+        create: () => L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}{r}.png', {
+            maxZoom: 19,
+            subdomains: 'abcd',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+        })
+    },
+    esriTopo: {
+        name: 'Terrain',
+        create: () => L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 19,
+            attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
+        })
+    },
+    esriSatellite: {
+        name: 'Satellite',
+        create: () => L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 19,
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS'
+        })
+    }
+};
+
+function switchMapLayer(layerKey, btnElement) {
+    if (!leafletMap || !mapBaseLayers[layerKey]) return;
+    
+    currentBaseLayerKey = layerKey;
+    
+    if (currentTileLayer) {
+        leafletMap.removeLayer(currentTileLayer);
+    }
+    
+    currentTileLayer = mapBaseLayers[layerKey].create();
+    currentTileLayer.addTo(leafletMap);
+    
+    // Update active pill UI
+    const pills = document.querySelectorAll('.map-pill-btn');
+    pills.forEach(p => p.classList.remove('active'));
+    if (btnElement) {
+        btnElement.classList.add('active');
+    } else {
+        const matchingBtn = document.querySelector(`.map-pill-btn[data-layer="${layerKey}"]`);
+        if (matchingBtn) matchingBtn.classList.add('active');
+    }
+}
 
 function initOrUpdateIndiaMap(dests) {
     const mapCard = document.getElementById('india-map-card');
@@ -523,13 +573,15 @@ function initOrUpdateIndiaMap(dests) {
                 attributionControl: true
             }).setView([22.5, 82.0], 5);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}.png', {
-                maxZoom: 18,
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(leafletMap);
+            // Use CartoDB Voyager as default (Cloudflare CDN, high contrast, never blocked by Indian ISPs)
+            currentTileLayer = mapBaseLayers.voyager.create();
+            currentTileLayer.addTo(leafletMap);
 
             mapMarkersGroup = L.featureGroup().addTo(leafletMap);
         }
+
+        // Immediately recalculate container size now that mapCard is visible
+        leafletMap.invalidateSize(true);
 
         mapMarkersGroup.clearLayers();
 
@@ -584,12 +636,15 @@ function initOrUpdateIndiaMap(dests) {
         });
 
         if (mapMarkersGroup.getLayers().length > 0) {
-            leafletMap.fitBounds(mapMarkersGroup.getBounds().pad(0.18));
+            const bounds = mapMarkersGroup.getBounds();
+            if (bounds.isValid()) {
+                leafletMap.fitBounds(bounds.pad(0.18));
+            }
         }
 
         setTimeout(() => {
-            if (leafletMap) leafletMap.invalidateSize();
-        }, 150);
+            if (leafletMap) leafletMap.invalidateSize(true);
+        }, 180);
     } catch (e) {
         console.error("Map initialization notice:", e);
     }

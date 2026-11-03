@@ -14,7 +14,7 @@
     <!-- Leaflet.js for Real Interactive India Geospatial Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <link rel="stylesheet" href="/static/css/style.css?v=6">
+    <link rel="stylesheet" href="/static/css/style.css?v=7">
 </head>
 <body>
     <!-- Top Academic Header -->
@@ -272,9 +272,16 @@
                                 <strong>🗺️ Interactive India Travel Map</strong>
                                 <span style="font-size: 0.75rem; color: #64748B; font-weight: normal;">(Plotting Recommended Hubs with Live Weather)</span>
                             </div>
-                            <button type="button" class="btn-map-reset" onclick="resetMapView()">Reset View</button>
+                            <div class="map-controls-group">
+                                <div class="map-layer-pills">
+                                    <button type="button" class="map-pill-btn active" data-layer="voyager" onclick="switchMapLayer('voyager', this)">Street</button>
+                                    <button type="button" class="map-pill-btn" data-layer="esriTopo" onclick="switchMapLayer('esriTopo', this)">Terrain</button>
+                                    <button type="button" class="map-pill-btn" data-layer="esriSatellite" onclick="switchMapLayer('esriSatellite', this)">Satellite</button>
+                                </div>
+                                <button type="button" class="btn-map-reset" onclick="resetMapView()">Reset View</button>
+                            </div>
                         </div>
-                        <div id="indiaMap" style="height: 380px; width: 100%; border-radius: 8px; border: 1px solid #E2E8F0; z-index: 1;"></div>
+                        <div id="indiaMap" style="height: 400px; width: 100%; border-radius: 8px; border: 1px solid #E2E8F0; z-index: 1;"></div>
                     </div>
 
                     <!-- Cards Container -->
@@ -468,6 +475,6 @@
         </div>
     </footer>
 
-    <script src="/static/js/app.js?v=5"></script>
+    <script src="/static/js/app.js?v=7"></script>
 </body>
 </html>
