@@ -1,176 +1,176 @@
-DestinationID,Name,State,Category,BestTimeToVisit,Season,Budget_Tier,Popularity
-101,Hampi UNESCO Ruins,Karnataka,Cultural,Oct-Mar,Winter,Moderate,9.6
-102,Taj Mahal & Agra Fort,Uttar Pradesh,Cultural,Nov-Feb,Winter,Moderate,9.9
-103,Mysore Palace & Srirangapatna,Karnataka,Cultural,Sep-Mar,Post-Monsoon,Budget,9.3
-104,Jaipur City Palace & Amer Fort,Rajasthan,Cultural,Oct-Mar,Winter,Luxury,9.5
-105,Badami Cave Temples,Karnataka,Cultural,Oct-Mar,Winter,Budget,8.9
-106,Pattadakal & Aihole Monuments,Karnataka,Cultural,Oct-Mar,Winter,Budget,8.8
-107,Bijapur Gol Gumbaz & Ibrahim Rauza,Karnataka,Cultural,Oct-Feb,Winter,Budget,8.7
-108,Belur Chennakeshava Temple,Karnataka,Cultural,Oct-Mar,Winter,Budget,9.0
-109,Halebidu Hoysaleshwara Temple,Karnataka,Cultural,Oct-Mar,Winter,Budget,8.9
-110,Bidar Fort & Mahmud Gawan Madrasa,Karnataka,Cultural,Nov-Feb,Winter,Budget,8.5
-111,Khajuraho Group of Monuments,Madhya Pradesh,Cultural,Oct-Mar,Winter,Moderate,9.2
-112,Udaipur City Palace & Lake Pichola,Rajasthan,Cultural,Sep-Mar,Winter,Luxury,9.6
-113,Jodhpur Mehrangarh Fort,Rajasthan,Cultural,Oct-Mar,Winter,Moderate,9.4
-114,Jaisalmer Golden Fort & Haveli,Rajasthan,Cultural,Nov-Feb,Winter,Moderate,9.3
-115,Ajanta & Ellora Rock Cut Caves,Maharashtra,Cultural,Nov-Mar,Winter,Moderate,9.5
-116,Delhi Red Fort & Qutub Minar,Delhi,Cultural,Nov-Feb,Winter,Budget,9.1
-117,Gwalior Fort & Jai Vilas Palace,Madhya Pradesh,Cultural,Oct-Mar,Winter,Budget,8.8
-118,Orchha Forts & Chhatris,Madhya Pradesh,Cultural,Oct-Mar,Winter,Budget,8.7
-119,Fatehpur Sikri Imperial City,Uttar Pradesh,Cultural,Nov-Feb,Winter,Budget,9.0
-120,Konark Sun Temple,Odisha,Cultural,Oct-Mar,Winter,Budget,9.4
-121,Mahabalipuram Shore Temples,Tamil Nadu,Cultural,Nov-Feb,Winter,Moderate,9.2
-122,Thanjavur Brihadisvara Temple,Tamil Nadu,Cultural,Oct-Mar,Winter,Budget,9.3
-123,Chittorgarh Fort,Rajasthan,Cultural,Oct-Mar,Winter,Budget,9.1
-124,Nalanda University Ruins,Bihar,Cultural,Nov-Feb,Winter,Budget,8.7
-125,Golconda Fort & Qutb Shahi Tombs,Telangana,Cultural,Oct-Mar,Winter,Budget,8.9
-126,Kumbhalgarh Great Wall of India,Rajasthan,Cultural,Oct-Mar,Winter,Moderate,9.0
-127,"Rani Ki Vav Stepwell, Patan",Gujarat,Cultural,Oct-Mar,Winter,Budget,9.1
-128,Bundi Stepwells & Taragarh Fort,Rajasthan,Cultural,Oct-Mar,Winter,Budget,8.6
-129,Sanchi Buddhist Stupa,Madhya Pradesh,Cultural,Oct-Mar,Winter,Budget,8.9
-130,Victoria Memorial & Howrah Bridge,West Bengal,Cultural,Oct-Mar,Winter,Moderate,9.0
-131,Mandu Eco-Heritage Citadel,Madhya Pradesh,Cultural,Jul-Mar,Monsoon,Budget,8.8
-132,Chhatrapati Shivaji Maharaj Terminus,Maharashtra,Cultural,Nov-Feb,Winter,Luxury,9.1
-133,Kanchipuram Silk & Heritage Town,Tamil Nadu,Cultural,Oct-Mar,Winter,Budget,8.7
-134,Chettinad Heritage Mansions,Tamil Nadu,Cultural,Oct-Mar,Winter,Luxury,8.8
-135,Padmanabhapuram Palace,Tamil Nadu,Cultural,Nov-Feb,Winter,Budget,8.9
-201,"North Goa Beaches (Calangute, Anjuna, Baga)",Goa,Leisure,Nov-Feb,Winter,Moderate,9.7
-202,"South Goa Beaches (Palolem, Agonda, Colva)",Goa,Leisure,Nov-Feb,Winter,Luxury,9.6
-203,Gokarna (Om Beach & Kudle Beach),Karnataka,Leisure,Oct-Mar,Winter,Budget,9.4
-204,Kaup Beach & Lighthouse,Karnataka,Leisure,Oct-Feb,Winter,Budget,8.8
-205,Malpe Beach & St. Mary's Island,Karnataka,Leisure,Oct-Mar,Winter,Budget,9.1
-206,Karwar Rabindranath Tagore Beach,Karnataka,Leisure,Oct-Feb,Winter,Budget,8.7
-207,Havelock Island (Radhanagar Beach),Andaman & Nicobar,Leisure,Nov-Apr,Winter,Luxury,9.8
-208,Neil Island (Bharatpur & Laxmanpur),Andaman & Nicobar,Leisure,Nov-Apr,Winter,Luxury,9.3
-209,Varkala Cliff Beach & Sunset Point,Kerala,Leisure,Nov-Feb,Winter,Moderate,9.4
-210,Kovalam Lighthouse Beach,Kerala,Leisure,Sep-Mar,Winter,Moderate,9.0
-211,Marari Serene Beach,Kerala,Leisure,Oct-Mar,Winter,Luxury,9.1
-212,Pondicherry French Quarter & Promenade,Puducherry,Leisure,Oct-Mar,Winter,Moderate,9.3
-213,Auroville & Serenity Beach,Puducherry,Leisure,Nov-Feb,Winter,Moderate,8.9
-214,Puri Golden Beach,Odisha,Leisure,Oct-Feb,Winter,Budget,8.8
-215,Chandipur Hide & Seek Beach,Odisha,Leisure,Nov-Mar,Winter,Budget,8.5
-216,Digha & Mandarmani Coastal Drive,West Bengal,Leisure,Oct-Feb,Winter,Budget,8.4
-217,Alibaug & Kashid Beach,Maharashtra,Leisure,Nov-Mar,Winter,Moderate,8.9
-218,Tarkarli White Sand Beach & Coral,Maharashtra,Leisure,Oct-Mar,Winter,Moderate,9.2
-219,Ganpatipule Pristine Beach,Maharashtra,Leisure,Oct-Feb,Winter,Budget,8.7
-220,Diu Island (Nagoa Beach & Fort),Daman & Diu,Leisure,Oct-Mar,Winter,Moderate,8.8
-221,Marina Beach & Besant Nagar,Tamil Nadu,Leisure,Nov-Feb,Winter,Budget,8.6
-222,Dhanushkodi Ghost Town & Beach,Tamil Nadu,Leisure,Oct-Mar,Winter,Budget,9.3
-223,Bekal Fort & Beach Resort,Kerala,Leisure,Oct-Mar,Winter,Luxury,9.0
-224,Agatti & Bangaram Islands,Lakshadweep,Leisure,Oct-Apr,Winter,Luxury,9.7
-225,Minicoy Lagoon & Lighthouse,Lakshadweep,Leisure,Nov-Mar,Winter,Luxury,9.4
-226,"Rushikonda Beach, Vizag",Andhra Pradesh,Leisure,Oct-Mar,Winter,Budget,8.8
-227,Mangalore Panambur & Tannirbhavi Beach,Karnataka,Leisure,Oct-Feb,Winter,Budget,8.6
-228,Ullal Beach & Summer Sand Resort,Karnataka,Leisure,Oct-Feb,Winter,Budget,8.4
-229,Kizhunna & Thottada Secluded Beaches,Kerala,Leisure,Oct-Mar,Winter,Moderate,8.7
-230,Kappad Beach (Vasco da Gama Landfall),Kerala,Leisure,Nov-Feb,Winter,Budget,8.6
-301,Coorg (Madikeri & Coffee Valleys),Karnataka,Nature,Jul-Mar,Monsoon,Moderate,9.6
-302,Chikmagalur (Mullayanagiri & Estate),Karnataka,Nature,Sep-Mar,Post-Monsoon,Moderate,9.3
-303,Jog Falls & Sharavathi Valley,Karnataka,Nature,Jul-Nov,Monsoon,Budget,9.2
-304,Bandipur National Park Tiger Reserve,Karnataka,Nature,Oct-May,Winter,Moderate,9.3
-305,Nagarhole (Kabini Safari & Backwaters),Karnataka,Nature,Oct-May,Winter,Luxury,9.5
-306,Kemmanagundi (KR Hills & Hebbe Falls),Karnataka,Nature,Sep-Mar,Post-Monsoon,Budget,8.9
-307,Agumbe (Cobra Capital & Sunset Point),Karnataka,Nature,Jun-Dec,Monsoon,Budget,9.0
-308,Kudremukh National Park Peak,Karnataka,Nature,Jun-Feb,Monsoon,Budget,9.1
-309,Nandi Hills Sunrise Viewpoint,Karnataka,Nature,Oct-Mar,Winter,Budget,8.9
-310,Yana Rocks & Vibhooti Waterfalls,Karnataka,Nature,Sep-Feb,Post-Monsoon,Budget,8.8
-311,Munnar Tea Gardens & Eravikulam,Kerala,Nature,Sep-Mar,Post-Monsoon,Moderate,9.7
-312,Wayanad Chembra Peak & Edakkal,Kerala,Nature,Oct-May,Winter,Budget,9.2
-313,Thekkady (Periyar Tiger Sanctuary),Kerala,Nature,Sep-Apr,Winter,Moderate,9.1
-314,Ooty (Nilgiri Botanical Gardens & Lake),Tamil Nadu,Nature,Apr-Jun,Summer,Moderate,9.4
-315,Kodaikanal (Princess of Hill Stations),Tamil Nadu,Nature,Apr-Jun,Summer,Moderate,9.3
-316,Yercaud (Jewel of the South),Tamil Nadu,Nature,Oct-Mar,Winter,Budget,8.6
-317,Manali (Solang & Rohtang Valley),Himachal Pradesh,Nature,Apr-Jun,Summer,Moderate,9.8
-318,Shimla & Kufri Pine Ridges,Himachal Pradesh,Nature,Mar-Jun,Summer,Moderate,9.3
-319,Dharamshala & Kangra Valley,Himachal Pradesh,Nature,Mar-Jun,Summer,Moderate,9.2
-320,Dalhousie & Khajjiar (Mini Switzerland),Himachal Pradesh,Nature,Apr-Jun,Summer,Moderate,9.1
-321,Nainital Lake & Snow View Point,Uttarakhand,Nature,Mar-Jun,Summer,Moderate,9.2
-322,Mussoorie (Queen of Hills & Kempty Falls),Uttarakhand,Nature,Mar-Jun,Summer,Moderate,9.1
-323,Jim Corbett National Park,Uttarakhand,Nature,Nov-Apr,Winter,Luxury,9.5
-324,Valley of Flowers UNESCO Park,Uttarakhand,Nature,Jul-Sep,Monsoon,Moderate,9.6
-325,Kausani (300km Himalayan Panorama),Uttarakhand,Nature,Apr-Jun,Summer,Budget,8.9
-326,Darjeeling Tiger Hill & Tea Plantations,West Bengal,Nature,Mar-May,Summer,Moderate,9.4
-327,Kalimpong Hill Orchid Valleys,West Bengal,Nature,Mar-May,Summer,Budget,8.7
-328,Dooars Wildlife & Gorumara Safari,West Bengal,Nature,Oct-Mar,Winter,Budget,8.8
-329,Gangtok & Tsomgo Glacier Lake,Sikkim,Nature,Mar-May,Summer,Moderate,9.5
-330,Pelling (Kanchenjunga Close View),Sikkim,Nature,Mar-May,Summer,Moderate,9.1
-331,Yumthang Valley of Flowers (Zero Point),Sikkim,Nature,Apr-Jun,Summer,Moderate,9.4
-332,Shillong (Scotland of the East),Meghalaya,Nature,Sep-May,Post-Monsoon,Moderate,9.5
-333,Cherrapunji & Nohkalikai Waterfalls,Meghalaya,Nature,Sep-May,Post-Monsoon,Moderate,9.6
-334,Mawlynnong & Living Root Bridges,Meghalaya,Nature,Sep-May,Post-Monsoon,Budget,9.3
-335,Kaziranga National Park (One-Horned Rhino),Assam,Nature,Nov-Apr,Winter,Moderate,9.6
-336,Majuli Island (World's Largest River Island),Assam,Nature,Oct-Mar,Winter,Budget,8.9
-337,Tawang High Altitude Monasteries & Pass,Arunachal Pradesh,Nature,Mar-Jun,Summer,Moderate,9.5
-338,Ziro Valley Pine Groves & Rice Fields,Arunachal Pradesh,Nature,Mar-Oct,Summer,Budget,9.1
-339,Mahabaleshwar & Arthur's Seat Point,Maharashtra,Nature,Oct-May,Winter,Moderate,9.1
-340,Lonavala & Khandala Ghats,Maharashtra,Nature,Jul-Oct,Monsoon,Budget,9.0
-341,Panchgani Table Land Plateau,Maharashtra,Nature,Sep-May,Post-Monsoon,Moderate,8.8
-342,Pachmarhi (Queen of Satpura),Madhya Pradesh,Nature,Oct-Apr,Winter,Budget,8.9
-343,Kanha & Bandhavgarh Tiger Reserves,Madhya Pradesh,Nature,Oct-May,Winter,Luxury,9.5
-344,Mount Abu (Rajasthan's Oasis Hill Station),Rajasthan,Nature,Sep-Mar,Winter,Moderate,8.9
-345,Saputara Eco Hill Station,Gujarat,Nature,Jul-Feb,Monsoon,Budget,8.6
-401,Leh Ladakh Pangong Lake & Khardung La,Ladakh,Adventure,May-Sep,Summer,Luxury,9.9
-402,Nubra Valley & Hunder Sand Dunes,Ladakh,Adventure,Jun-Sep,Summer,Luxury,9.6
-403,"Chadar Frozen River Trek, Zanskar",Ladakh,Adventure,Jan-Feb,Winter,Luxury,9.7
-404,Rishikesh White Water River Rafting,Uttarakhand,Adventure,Sep-Jun,Post-Monsoon,Budget,9.7
-405,Auli Skiing Slopes & Cable Car,Uttarakhand,Adventure,Dec-Mar,Winter,Luxury,9.5
-406,Kedarkantha Snow Peak Trek,Uttarakhand,Adventure,Dec-Apr,Winter,Budget,9.4
-407,Roopkund Mystery Lake High Trek,Uttarakhand,Adventure,May-Oct,Summer,Moderate,9.2
-408,Har Ki Dun Cradle of Mountain Trek,Uttarakhand,Adventure,Apr-Nov,Summer,Budget,9.1
-409,Spiti Valley & Chandratal Lake,Himachal Pradesh,Adventure,Jun-Oct,Summer,Moderate,9.6
-410,Bir Billing Paragliding Capital,Himachal Pradesh,Adventure,Sep-Nov,Post-Monsoon,Moderate,9.4
-411,Kasol & Kheerganga Hot Spring Trek,Himachal Pradesh,Adventure,Apr-Nov,Summer,Budget,9.3
-412,"Triund Mountain Ridge Trek, McLeod Ganj",Himachal Pradesh,Adventure,Mar-Dec,Summer,Budget,9.2
-413,Hampta Pass Crossover Trek,Himachal Pradesh,Adventure,Jun-Sep,Summer,Moderate,9.4
-414,Gulmarg Powder Snow Skiing & Gondola,Jammu and Kashmir,Adventure,Dec-Mar,Winter,Luxury,9.8
-415,Pahalgam & Betaab Valley Horse Trails,Jammu and Kashmir,Adventure,Apr-Oct,Summer,Moderate,9.4
-416,"Great Lakes Wilderness Trek, Sonamarg",Jammu and Kashmir,Adventure,Jul-Sep,Summer,Moderate,9.6
-417,Dandeli Kali River White Water Rafting,Karnataka,Adventure,Oct-May,Winter,Budget,9.3
-418,Kumara Parvatha Trek (Pushpagiri),Karnataka,Adventure,Oct-Feb,Winter,Budget,9.1
-419,Tadiandamol Coorg's Highest Peak,Karnataka,Adventure,Sep-Feb,Post-Monsoon,Budget,8.9
-420,"Netrani Island Scuba Diving, Murudeshwar",Karnataka,Adventure,Oct-Apr,Winter,Moderate,9.2
-421,Savandurga Monolith Night Trek,Karnataka,Adventure,Sep-Feb,Post-Monsoon,Budget,8.7
-422,Havelock Deep Sea Scuba & Coral Safari,Andaman & Nicobar,Adventure,Nov-Apr,Winter,Luxury,9.7
-423,Sam Sand Dunes Jeep Safari & Camel Trek,Rajasthan,Adventure,Nov-Feb,Winter,Moderate,9.2
-424,Rann of Kutch Desert Safari & Full Moon,Gujarat,Adventure,Nov-Feb,Winter,Luxury,9.6
-425,Harishchandragad & Konkan Kada Trek,Maharashtra,Adventure,Oct-Feb,Winter,Budget,9.0
-426,Kalsubai Maharashtra's Highest Peak,Maharashtra,Adventure,Jul-Feb,Monsoon,Budget,8.9
-427,Sandhan Valley Canyon Trek,Maharashtra,Adventure,Nov-Feb,Winter,Budget,9.1
-428,Kolukkumalai Off-Road Jeep Safari,Tamil Nadu,Adventure,Sep-Apr,Winter,Moderate,9.3
-429,Kovalam & Varkala Surfing Schools,Kerala,Adventure,Nov-Apr,Winter,Moderate,9.0
-430,Goa Scuba Diving & Parasailing Watersports,Goa,Adventure,Oct-May,Winter,Moderate,9.4
-501,Varanasi Kashi Vishwanath & Ganga Ghats,Uttar Pradesh,Religious,Oct-Mar,Winter,Budget,9.8
-502,Tirupati Sri Venkateswara Balaji,Andhra Pradesh,Religious,Sep-Mar,Winter,Budget,9.9
-503,"Golden Temple (Harmandir Sahib), Amritsar",Punjab,Religious,Oct-Mar,Winter,Budget,9.9
-504,Kedarnath Himalayan Jyotirlinga Shrine,Uttarakhand,Religious,May-Oct,Summer,Moderate,9.8
-505,Badrinath Dham Alaknanda Temple,Uttarakhand,Religious,May-Oct,Summer,Moderate,9.7
-506,Haridwar Har Ki Pauri & Ganga Aarti,Uttarakhand,Religious,Sep-Apr,Post-Monsoon,Budget,9.5
-507,Rishikesh Parmarth Niketan & Ashrams,Uttarakhand,Religious,Sep-Apr,Post-Monsoon,Budget,9.4
-508,Murudeshwar Giant Shiva Statue & Temple,Karnataka,Religious,Oct-Mar,Winter,Budget,9.4
-509,Udupi Sri Krishna Matha,Karnataka,Religious,Oct-Mar,Winter,Budget,9.2
-510,Dharmasthala Manjunatha Swamy Temple,Karnataka,Religious,Sep-Mar,Winter,Budget,9.3
-511,Kukke Subramanya Serpent Shrine,Karnataka,Religious,Sep-Mar,Winter,Budget,9.1
-512,Sringeri Sharada Peetham & Tunga River,Karnataka,Religious,Oct-Mar,Winter,Budget,9.3
-513,Horanadu Annapoorneshwari Temple,Karnataka,Religious,Oct-Mar,Winter,Budget,9.0
-514,Gokarna Mahabaleshwar Temple (Atmalinga),Karnataka,Religious,Oct-Mar,Winter,Budget,9.3
-515,Shravanabelagola Gommateshwara Bahubali,Karnataka,Religious,Oct-Mar,Winter,Budget,9.1
-516,"Chamundeshwari Temple, Chamundi Hills",Karnataka,Religious,Sep-Mar,Post-Monsoon,Budget,9.0
-517,Koodalasangama Basaveshwara Aikya,Karnataka,Religious,Oct-Feb,Winter,Budget,8.7
-518,Madurai Meenakshi Amman Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Budget,9.7
-519,Rameshwaram Ramanathaswamy Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Budget,9.6
-520,Kanyakumari Vivekananda Rock & Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Moderate,9.4
-521,Palani Murugan Dhandayuthapani Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Budget,9.1
-522,Chidambaram Nataraja Cosmic Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Budget,9.2
-523,Sabarimala Ayyappa Hill Shrine,Kerala,Religious,Nov-Jan,Winter,Budget,9.6
-524,Guruvayur Sri Krishna Temple,Kerala,Religious,Oct-Mar,Winter,Budget,9.3
-525,Padmanabhaswamy Gold Vault Temple,Kerala,Religious,Oct-Mar,Winter,Moderate,9.5
-526,Puri Jagannath Temple & Rath Yatra,Odisha,Religious,Oct-Mar,Winter,Budget,9.6
-527,Bodh Gaya Mahabodhi Tree & Temple,Bihar,Religious,Nov-Feb,Winter,Budget,9.5
-528,"Somnath First Jyotirlinga, Veraval",Gujarat,Religious,Oct-Mar,Winter,Budget,9.5
-529,Dwarka Dwarkadhish Western Dham,Gujarat,Religious,Oct-Mar,Winter,Budget,9.4
-530,Shirdi Sai Baba Samadhi Mandir,Maharashtra,Religious,Oct-Mar,Winter,Budget,9.6
-531,"Trimbakeshwar Jyotirlinga, Nashik",Maharashtra,Religious,Oct-Mar,Winter,Budget,9.2
-532,"Vaishno Devi Bhawan, Katra",Jammu and Kashmir,Religious,Mar-Oct,Summer,Budget,9.8
-533,Amarnath Cave Ice Shiva Lingam,Jammu and Kashmir,Religious,Jul-Aug,Monsoon,Moderate,9.7
-534,Pushkar Brahma Temple & Sacred Sarovar,Rajasthan,Religious,Oct-Mar,Winter,Budget,9.1
-535,"Kamakhya Devi Tantric Temple, Guwahati",Assam,Religious,Oct-Apr,Winter,Budget,9.3
+DestinationID,Name,State,Category,BestTimeToVisit,Season,Budget_Tier,Popularity,Latitude,Longitude
+101,Hampi UNESCO Ruins,Karnataka,Cultural,Oct-Mar,Winter,Moderate,9.6,15.335,76.46
+102,Taj Mahal & Agra Fort,Uttar Pradesh,Cultural,Nov-Feb,Winter,Moderate,9.9,27.1751,78.0421
+103,Mysore Palace & Srirangapatna,Karnataka,Cultural,Sep-Mar,Post-Monsoon,Budget,9.3,12.3051,76.6551
+104,Jaipur City Palace & Amer Fort,Rajasthan,Cultural,Oct-Mar,Winter,Luxury,9.5,26.9855,75.8513
+105,Badami Cave Temples,Karnataka,Cultural,Oct-Mar,Winter,Budget,8.9,15.9189,75.6766
+106,Pattadakal & Aihole Monuments,Karnataka,Cultural,Oct-Mar,Winter,Budget,8.8,15.9489,75.816
+107,Bijapur Gol Gumbaz & Ibrahim Rauza,Karnataka,Cultural,Oct-Feb,Winter,Budget,8.7,16.8302,75.735
+108,Belur Chennakeshava Temple,Karnataka,Cultural,Oct-Mar,Winter,Budget,9.0,13.1625,75.8596
+109,Halebidu Hoysaleshwara Temple,Karnataka,Cultural,Oct-Mar,Winter,Budget,8.9,13.2167,75.9936
+110,Bidar Fort & Mahmud Gawan Madrasa,Karnataka,Cultural,Nov-Feb,Winter,Budget,8.5,17.9104,77.5199
+111,Khajuraho Group of Monuments,Madhya Pradesh,Cultural,Oct-Mar,Winter,Moderate,9.2,24.8318,79.9199
+112,Udaipur City Palace & Lake Pichola,Rajasthan,Cultural,Sep-Mar,Winter,Luxury,9.6,24.5764,73.6835
+113,Jodhpur Mehrangarh Fort,Rajasthan,Cultural,Oct-Mar,Winter,Moderate,9.4,26.298,73.0189
+114,Jaisalmer Golden Fort & Haveli,Rajasthan,Cultural,Nov-Feb,Winter,Moderate,9.3,26.9124,70.9127
+115,Ajanta & Ellora Rock Cut Caves,Maharashtra,Cultural,Nov-Mar,Winter,Moderate,9.5,20.5519,75.7033
+116,Delhi Red Fort & Qutub Minar,Delhi,Cultural,Nov-Feb,Winter,Budget,9.1,28.6562,77.241
+117,Gwalior Fort & Jai Vilas Palace,Madhya Pradesh,Cultural,Oct-Mar,Winter,Budget,8.8,26.2307,78.1695
+118,Orchha Forts & Chhatris,Madhya Pradesh,Cultural,Oct-Mar,Winter,Budget,8.7,25.3512,78.6415
+119,Fatehpur Sikri Imperial City,Uttar Pradesh,Cultural,Nov-Feb,Winter,Budget,9.0,27.0945,77.6679
+120,Konark Sun Temple,Odisha,Cultural,Oct-Mar,Winter,Budget,9.4,19.8876,86.0945
+121,Mahabalipuram Shore Temples,Tamil Nadu,Cultural,Nov-Feb,Winter,Moderate,9.2,12.6208,80.1945
+122,Thanjavur Brihadisvara Temple,Tamil Nadu,Cultural,Oct-Mar,Winter,Budget,9.3,10.7828,79.1318
+123,Chittorgarh Fort,Rajasthan,Cultural,Oct-Mar,Winter,Budget,9.1,24.8887,74.6269
+124,Nalanda University Ruins,Bihar,Cultural,Nov-Feb,Winter,Budget,8.7,25.1357,85.4435
+125,Golconda Fort & Qutb Shahi Tombs,Telangana,Cultural,Oct-Mar,Winter,Budget,8.9,17.3833,78.4011
+126,Kumbhalgarh Great Wall of India,Rajasthan,Cultural,Oct-Mar,Winter,Moderate,9.0,25.1478,73.5872
+127,"Rani Ki Vav Stepwell, Patan",Gujarat,Cultural,Oct-Mar,Winter,Budget,9.1,23.8589,72.1017
+128,Bundi Stepwells & Taragarh Fort,Rajasthan,Cultural,Oct-Mar,Winter,Budget,8.6,25.4414,75.6421
+129,Sanchi Buddhist Stupa,Madhya Pradesh,Cultural,Oct-Mar,Winter,Budget,8.9,23.4793,77.7397
+130,Victoria Memorial & Howrah Bridge,West Bengal,Cultural,Oct-Mar,Winter,Moderate,9.0,22.5448,88.3426
+131,Mandu Eco-Heritage Citadel,Madhya Pradesh,Cultural,Jul-Mar,Monsoon,Budget,8.8,22.3662,75.3949
+132,Chhatrapati Shivaji Maharaj Terminus,Maharashtra,Cultural,Nov-Feb,Winter,Luxury,9.1,18.94,72.8353
+133,Kanchipuram Silk & Heritage Town,Tamil Nadu,Cultural,Oct-Mar,Winter,Budget,8.7,12.8342,79.7036
+134,Chettinad Heritage Mansions,Tamil Nadu,Cultural,Oct-Mar,Winter,Luxury,8.8,10.0763,78.7844
+135,Padmanabhapuram Palace,Tamil Nadu,Cultural,Nov-Feb,Winter,Budget,8.9,8.2508,77.3275
+201,"North Goa Beaches (Calangute, Anjuna, Baga)",Goa,Leisure,Nov-Feb,Winter,Moderate,9.7,15.5439,73.7553
+202,"South Goa Beaches (Palolem, Agonda, Colva)",Goa,Leisure,Nov-Feb,Winter,Luxury,9.6,15.01,74.0232
+203,Gokarna (Om Beach & Kudle Beach),Karnataka,Leisure,Oct-Mar,Winter,Budget,9.4,14.5479,74.3188
+204,Kaup Beach & Lighthouse,Karnataka,Leisure,Oct-Feb,Winter,Budget,8.8,13.2205,74.7432
+205,Malpe Beach & St. Mary's Island,Karnataka,Leisure,Oct-Mar,Winter,Budget,9.1,13.3541,74.6974
+206,Karwar Rabindranath Tagore Beach,Karnataka,Leisure,Oct-Feb,Winter,Budget,8.7,14.8185,74.1306
+207,Havelock Island (Radhanagar Beach),Andaman & Nicobar,Leisure,Nov-Apr,Winter,Luxury,9.8,11.9761,92.9876
+208,Neil Island (Bharatpur & Laxmanpur),Andaman & Nicobar,Leisure,Nov-Apr,Winter,Luxury,9.3,11.8324,93.0506
+209,Varkala Cliff Beach & Sunset Point,Kerala,Leisure,Nov-Feb,Winter,Moderate,9.4,8.7379,76.7163
+210,Kovalam Lighthouse Beach,Kerala,Leisure,Sep-Mar,Winter,Moderate,9.0,8.4021,76.9787
+211,Marari Serene Beach,Kerala,Leisure,Oct-Mar,Winter,Luxury,9.1,9.6011,76.2999
+212,Pondicherry French Quarter & Promenade,Puducherry,Leisure,Oct-Mar,Winter,Moderate,9.3,11.9338,79.8358
+213,Auroville & Serenity Beach,Puducherry,Leisure,Nov-Feb,Winter,Moderate,8.9,12.007,79.8107
+214,Puri Golden Beach,Odisha,Leisure,Oct-Feb,Winter,Budget,8.8,19.7983,85.8249
+215,Chandipur Hide & Seek Beach,Odisha,Leisure,Nov-Mar,Winter,Budget,8.5,21.4682,87.0234
+216,Digha & Mandarmani Coastal Drive,West Bengal,Leisure,Oct-Feb,Winter,Budget,8.4,21.6266,87.5074
+217,Alibaug & Kashid Beach,Maharashtra,Leisure,Nov-Mar,Winter,Moderate,8.9,18.6584,72.8773
+218,Tarkarli White Sand Beach & Coral,Maharashtra,Leisure,Oct-Mar,Winter,Moderate,9.2,16.0374,73.4908
+219,Ganpatipule Pristine Beach,Maharashtra,Leisure,Oct-Feb,Winter,Budget,8.7,17.1479,73.2687
+220,Diu Island (Nagoa Beach & Fort),Daman & Diu,Leisure,Oct-Mar,Winter,Moderate,8.8,20.7144,70.9874
+221,Marina Beach & Besant Nagar,Tamil Nadu,Leisure,Nov-Feb,Winter,Budget,8.6,13.0499,80.2824
+222,Dhanushkodi Ghost Town & Beach,Tamil Nadu,Leisure,Oct-Mar,Winter,Budget,9.3,9.1783,79.4184
+223,Bekal Fort & Beach Resort,Kerala,Leisure,Oct-Mar,Winter,Luxury,9.0,12.3927,75.0315
+224,Agatti & Bangaram Islands,Lakshadweep,Leisure,Oct-Apr,Winter,Luxury,9.7,10.8533,72.1948
+225,Minicoy Lagoon & Lighthouse,Lakshadweep,Leisure,Nov-Mar,Winter,Luxury,9.4,8.2833,73.05
+226,"Rushikonda Beach, Vizag",Andhra Pradesh,Leisure,Oct-Mar,Winter,Budget,8.8,17.7812,83.3852
+227,Mangalore Panambur & Tannirbhavi Beach,Karnataka,Leisure,Oct-Feb,Winter,Budget,8.6,12.9234,74.8085
+228,Ullal Beach & Summer Sand Resort,Karnataka,Leisure,Oct-Feb,Winter,Budget,8.4,12.8093,74.8523
+229,Kizhunna & Thottada Secluded Beaches,Kerala,Leisure,Oct-Mar,Winter,Moderate,8.7,11.8306,75.3957
+230,Kappad Beach (Vasco da Gama Landfall),Kerala,Leisure,Nov-Feb,Winter,Budget,8.6,11.3857,75.7277
+301,Coorg (Madikeri & Coffee Valleys),Karnataka,Nature,Jul-Mar,Monsoon,Moderate,9.6,12.4244,75.7382
+302,Chikmagalur (Mullayanagiri & Estate),Karnataka,Nature,Sep-Mar,Post-Monsoon,Moderate,9.3,13.3161,75.772
+303,Jog Falls & Sharavathi Valley,Karnataka,Nature,Jul-Nov,Monsoon,Budget,9.2,14.2285,74.8124
+304,Bandipur National Park Tiger Reserve,Karnataka,Nature,Oct-May,Winter,Moderate,9.3,11.6664,76.6291
+305,Nagarhole (Kabini Safari & Backwaters),Karnataka,Nature,Oct-May,Winter,Luxury,9.5,11.9567,76.2711
+306,Kemmanagundi (KR Hills & Hebbe Falls),Karnataka,Nature,Sep-Mar,Post-Monsoon,Budget,8.9,13.5487,75.7538
+307,Agumbe (Cobra Capital & Sunset Point),Karnataka,Nature,Jun-Dec,Monsoon,Budget,9.0,13.5073,75.0934
+308,Kudremukh National Park Peak,Karnataka,Nature,Jun-Feb,Monsoon,Budget,9.1,13.2198,75.2573
+309,Nandi Hills Sunrise Viewpoint,Karnataka,Nature,Oct-Mar,Winter,Budget,8.9,13.3702,77.6835
+310,Yana Rocks & Vibhooti Waterfalls,Karnataka,Nature,Sep-Feb,Post-Monsoon,Budget,8.8,14.5492,74.5513
+311,Munnar Tea Gardens & Eravikulam,Kerala,Nature,Sep-Mar,Post-Monsoon,Moderate,9.7,10.0889,77.0595
+312,Wayanad Chembra Peak & Edakkal,Kerala,Nature,Oct-May,Winter,Budget,9.2,11.6854,76.132
+313,Thekkady (Periyar Tiger Sanctuary),Kerala,Nature,Sep-Apr,Winter,Moderate,9.1,9.6031,77.1615
+314,Ooty (Nilgiri Botanical Gardens & Lake),Tamil Nadu,Nature,Apr-Jun,Summer,Moderate,9.4,11.4102,76.695
+315,Kodaikanal (Princess of Hill Stations),Tamil Nadu,Nature,Apr-Jun,Summer,Moderate,9.3,10.2381,77.4892
+316,Yercaud (Jewel of the South),Tamil Nadu,Nature,Oct-Mar,Winter,Budget,8.6,11.7753,78.2093
+317,Manali (Solang & Rohtang Valley),Himachal Pradesh,Nature,Apr-Jun,Summer,Moderate,9.8,32.2432,77.1892
+318,Shimla & Kufri Pine Ridges,Himachal Pradesh,Nature,Mar-Jun,Summer,Moderate,9.3,31.1048,77.1734
+319,Dharamshala & Kangra Valley,Himachal Pradesh,Nature,Mar-Jun,Summer,Moderate,9.2,32.219,76.3234
+320,Dalhousie & Khajjiar (Mini Switzerland),Himachal Pradesh,Nature,Apr-Jun,Summer,Moderate,9.1,32.5387,75.971
+321,Nainital Lake & Snow View Point,Uttarakhand,Nature,Mar-Jun,Summer,Moderate,9.2,29.3919,79.4542
+322,Mussoorie (Queen of Hills & Kempty Falls),Uttarakhand,Nature,Mar-Jun,Summer,Moderate,9.1,30.4598,78.0644
+323,Jim Corbett National Park,Uttarakhand,Nature,Nov-Apr,Winter,Luxury,9.5,29.53,78.7747
+324,Valley of Flowers UNESCO Park,Uttarakhand,Nature,Jul-Sep,Monsoon,Moderate,9.6,30.728,79.6053
+325,Kausani (300km Himalayan Panorama),Uttarakhand,Nature,Apr-Jun,Summer,Budget,8.9,29.8443,79.6044
+326,Darjeeling Tiger Hill & Tea Plantations,West Bengal,Nature,Mar-May,Summer,Moderate,9.4,27.041,88.2663
+327,Kalimpong Hill Orchid Valleys,West Bengal,Nature,Mar-May,Summer,Budget,8.7,27.0667,88.4667
+328,Dooars Wildlife & Gorumara Safari,West Bengal,Nature,Oct-Mar,Winter,Budget,8.8,26.65,88.7667
+329,Gangtok & Tsomgo Glacier Lake,Sikkim,Nature,Mar-May,Summer,Moderate,9.5,27.3389,88.6065
+330,Pelling (Kanchenjunga Close View),Sikkim,Nature,Mar-May,Summer,Moderate,9.1,27.3,88.2333
+331,Yumthang Valley of Flowers (Zero Point),Sikkim,Nature,Apr-Jun,Summer,Moderate,9.4,27.7833,88.7
+332,Shillong (Scotland of the East),Meghalaya,Nature,Sep-May,Post-Monsoon,Moderate,9.5,25.5788,91.8933
+333,Cherrapunji & Nohkalikai Waterfalls,Meghalaya,Nature,Sep-May,Post-Monsoon,Moderate,9.6,25.2986,91.7303
+334,Mawlynnong & Living Root Bridges,Meghalaya,Nature,Sep-May,Post-Monsoon,Budget,9.3,25.2017,91.9167
+335,Kaziranga National Park (One-Horned Rhino),Assam,Nature,Nov-Apr,Winter,Moderate,9.6,26.5775,93.1711
+336,Majuli Island (World's Largest River Island),Assam,Nature,Oct-Mar,Winter,Budget,8.9,26.95,94.2167
+337,Tawang High Altitude Monasteries & Pass,Arunachal Pradesh,Nature,Mar-Jun,Summer,Moderate,9.5,27.5861,91.8594
+338,Ziro Valley Pine Groves & Rice Fields,Arunachal Pradesh,Nature,Mar-Oct,Summer,Budget,9.1,27.5644,93.8385
+339,Mahabaleshwar & Arthur's Seat Point,Maharashtra,Nature,Oct-May,Winter,Moderate,9.1,17.9237,73.6586
+340,Lonavala & Khandala Ghats,Maharashtra,Nature,Jul-Oct,Monsoon,Budget,9.0,18.7557,73.4091
+341,Panchgani Table Land Plateau,Maharashtra,Nature,Sep-May,Post-Monsoon,Moderate,8.8,17.9242,73.8009
+342,Pachmarhi (Queen of Satpura),Madhya Pradesh,Nature,Oct-Apr,Winter,Budget,8.9,22.4674,78.4346
+343,Kanha & Bandhavgarh Tiger Reserves,Madhya Pradesh,Nature,Oct-May,Winter,Luxury,9.5,22.3345,80.6115
+344,Mount Abu (Rajasthan's Oasis Hill Station),Rajasthan,Nature,Sep-Mar,Winter,Moderate,8.9,24.5925,72.7156
+345,Saputara Eco Hill Station,Gujarat,Nature,Jul-Feb,Monsoon,Budget,8.6,20.575,73.7489
+401,Leh Ladakh Pangong Lake & Khardung La,Ladakh,Adventure,May-Sep,Summer,Luxury,9.9,34.1526,77.5771
+402,Nubra Valley & Hunder Sand Dunes,Ladakh,Adventure,Jun-Sep,Summer,Luxury,9.6,34.5833,77.55
+403,"Chadar Frozen River Trek, Zanskar",Ladakh,Adventure,Jan-Feb,Winter,Luxury,9.7,33.7483,76.8428
+404,Rishikesh White Water River Rafting,Uttarakhand,Adventure,Sep-Jun,Post-Monsoon,Budget,9.7,30.0869,78.2676
+405,Auli Skiing Slopes & Cable Car,Uttarakhand,Adventure,Dec-Mar,Winter,Luxury,9.5,30.5298,79.5694
+406,Kedarkantha Snow Peak Trek,Uttarakhand,Adventure,Dec-Apr,Winter,Budget,9.4,31.0234,78.1723
+407,Roopkund Mystery Lake High Trek,Uttarakhand,Adventure,May-Oct,Summer,Moderate,9.2,30.2642,79.7314
+408,Har Ki Dun Cradle of Mountain Trek,Uttarakhand,Adventure,Apr-Nov,Summer,Budget,9.1,31.1444,78.3847
+409,Spiti Valley & Chandratal Lake,Himachal Pradesh,Adventure,Jun-Oct,Summer,Moderate,9.6,32.2461,78.0349
+410,Bir Billing Paragliding Capital,Himachal Pradesh,Adventure,Sep-Nov,Post-Monsoon,Moderate,9.4,32.0428,76.7179
+411,Kasol & Kheerganga Hot Spring Trek,Himachal Pradesh,Adventure,Apr-Nov,Summer,Budget,9.3,32.01,77.315
+412,"Triund Mountain Ridge Trek, McLeod Ganj",Himachal Pradesh,Adventure,Mar-Dec,Summer,Budget,9.2,32.257,76.3533
+413,Hampta Pass Crossover Trek,Himachal Pradesh,Adventure,Jun-Sep,Summer,Moderate,9.4,32.289,77.368
+414,Gulmarg Powder Snow Skiing & Gondola,Jammu and Kashmir,Adventure,Dec-Mar,Winter,Luxury,9.8,34.0484,74.3805
+415,Pahalgam & Betaab Valley Horse Trails,Jammu and Kashmir,Adventure,Apr-Oct,Summer,Moderate,9.4,34.0106,75.3214
+416,"Great Lakes Wilderness Trek, Sonamarg",Jammu and Kashmir,Adventure,Jul-Sep,Summer,Moderate,9.6,34.3,75.2833
+417,Dandeli Kali River White Water Rafting,Karnataka,Adventure,Oct-May,Winter,Budget,9.3,15.2678,74.6189
+418,Kumara Parvatha Trek (Pushpagiri),Karnataka,Adventure,Oct-Feb,Winter,Budget,9.1,12.6644,75.6983
+419,Tadiandamol Coorg's Highest Peak,Karnataka,Adventure,Sep-Feb,Post-Monsoon,Budget,8.9,12.2167,75.6167
+420,"Netrani Island Scuba Diving, Murudeshwar",Karnataka,Adventure,Oct-Apr,Winter,Moderate,9.2,14.0167,74.3167
+421,Savandurga Monolith Night Trek,Karnataka,Adventure,Sep-Feb,Post-Monsoon,Budget,8.7,12.9194,77.2936
+422,Havelock Deep Sea Scuba & Coral Safari,Andaman & Nicobar,Adventure,Nov-Apr,Winter,Luxury,9.7,12.0,93.0
+423,Sam Sand Dunes Jeep Safari & Camel Trek,Rajasthan,Adventure,Nov-Feb,Winter,Moderate,9.2,26.83,70.51
+424,Rann of Kutch Desert Safari & Full Moon,Gujarat,Adventure,Nov-Feb,Winter,Luxury,9.6,23.8344,69.8389
+425,Harishchandragad & Konkan Kada Trek,Maharashtra,Adventure,Oct-Feb,Winter,Budget,9.0,19.3833,73.7833
+426,Kalsubai Maharashtra's Highest Peak,Maharashtra,Adventure,Jul-Feb,Monsoon,Budget,8.9,19.6,73.7167
+427,Sandhan Valley Canyon Trek,Maharashtra,Adventure,Nov-Feb,Winter,Budget,9.1,19.5333,73.7
+428,Kolukkumalai Off-Road Jeep Safari,Tamil Nadu,Adventure,Sep-Apr,Winter,Moderate,9.3,10.0833,77.2
+429,Kovalam & Varkala Surfing Schools,Kerala,Adventure,Nov-Apr,Winter,Moderate,9.0,8.73,76.71
+430,Goa Scuba Diving & Parasailing Watersports,Goa,Adventure,Oct-May,Winter,Moderate,9.4,15.52,73.76
+501,Varanasi Kashi Vishwanath & Ganga Ghats,Uttar Pradesh,Religious,Oct-Mar,Winter,Budget,9.8,25.3109,83.0107
+502,Tirupati Sri Venkateswara Balaji,Andhra Pradesh,Religious,Sep-Mar,Winter,Budget,9.9,13.6833,79.35
+503,"Golden Temple (Harmandir Sahib), Amritsar",Punjab,Religious,Oct-Mar,Winter,Budget,9.9,31.62,74.8765
+504,Kedarnath Himalayan Jyotirlinga Shrine,Uttarakhand,Religious,May-Oct,Summer,Moderate,9.8,30.7352,79.0669
+505,Badrinath Dham Alaknanda Temple,Uttarakhand,Religious,May-Oct,Summer,Moderate,9.7,30.7433,79.4938
+506,Haridwar Har Ki Pauri & Ganga Aarti,Uttarakhand,Religious,Sep-Apr,Post-Monsoon,Budget,9.5,29.956,78.17
+507,Rishikesh Parmarth Niketan & Ashrams,Uttarakhand,Religious,Sep-Apr,Post-Monsoon,Budget,9.4,30.125,78.315
+508,Murudeshwar Giant Shiva Statue & Temple,Karnataka,Religious,Oct-Mar,Winter,Budget,9.4,14.094,74.4899
+509,Udupi Sri Krishna Matha,Karnataka,Religious,Oct-Mar,Winter,Budget,9.2,13.3409,74.7421
+510,Dharmasthala Manjunatha Swamy Temple,Karnataka,Religious,Sep-Mar,Winter,Budget,9.3,12.9554,75.3789
+511,Kukke Subramanya Serpent Shrine,Karnataka,Religious,Sep-Mar,Winter,Budget,9.1,12.6775,75.6144
+512,Sringeri Sharada Peetham & Tunga River,Karnataka,Religious,Oct-Mar,Winter,Budget,9.3,13.4187,75.2536
+513,Horanadu Annapoorneshwari Temple,Karnataka,Religious,Oct-Mar,Winter,Budget,9.0,13.2789,75.3421
+514,Gokarna Mahabaleshwar Temple (Atmalinga),Karnataka,Religious,Oct-Mar,Winter,Budget,9.3,14.5428,74.3189
+515,Shravanabelagola Gommateshwara Bahubali,Karnataka,Religious,Oct-Mar,Winter,Budget,9.1,12.8572,76.4867
+516,"Chamundeshwari Temple, Chamundi Hills",Karnataka,Religious,Sep-Mar,Post-Monsoon,Budget,9.0,12.2745,76.6711
+517,Koodalasangama Basaveshwara Aikya,Karnataka,Religious,Oct-Feb,Winter,Budget,8.7,16.2064,76.0847
+518,Madurai Meenakshi Amman Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Budget,9.7,9.9195,78.1194
+519,Rameshwaram Ramanathaswamy Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Budget,9.6,9.2881,79.3174
+520,Kanyakumari Vivekananda Rock & Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Moderate,9.4,8.078,77.555
+521,Palani Murugan Dhandayuthapani Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Budget,9.1,10.45,77.5167
+522,Chidambaram Nataraja Cosmic Temple,Tamil Nadu,Religious,Oct-Mar,Winter,Budget,9.2,11.3992,79.6933
+523,Sabarimala Ayyappa Hill Shrine,Kerala,Religious,Nov-Jan,Winter,Budget,9.6,9.4344,77.0811
+524,Guruvayur Sri Krishna Temple,Kerala,Religious,Oct-Mar,Winter,Budget,9.3,10.5947,76.0406
+525,Padmanabhaswamy Gold Vault Temple,Kerala,Religious,Oct-Mar,Winter,Moderate,9.5,8.4828,76.9436
+526,Puri Jagannath Temple & Rath Yatra,Odisha,Religious,Oct-Mar,Winter,Budget,9.6,19.8049,85.8179
+527,Bodh Gaya Mahabodhi Tree & Temple,Bihar,Religious,Nov-Feb,Winter,Budget,9.5,24.6961,84.9913
+528,"Somnath First Jyotirlinga, Veraval",Gujarat,Religious,Oct-Mar,Winter,Budget,9.5,20.888,70.4012
+529,Dwarka Dwarkadhish Western Dham,Gujarat,Religious,Oct-Mar,Winter,Budget,9.4,22.2406,68.9685
+530,Shirdi Sai Baba Samadhi Mandir,Maharashtra,Religious,Oct-Mar,Winter,Budget,9.6,19.7667,74.4767
+531,"Trimbakeshwar Jyotirlinga, Nashik",Maharashtra,Religious,Oct-Mar,Winter,Budget,9.2,19.9328,73.5303
+532,"Vaishno Devi Bhawan, Katra",Jammu and Kashmir,Religious,Mar-Oct,Summer,Budget,9.8,32.99,74.95
+533,Amarnath Cave Ice Shiva Lingam,Jammu and Kashmir,Religious,Jul-Aug,Monsoon,Moderate,9.7,34.2156,75.5039
+534,Pushkar Brahma Temple & Sacred Sarovar,Rajasthan,Religious,Oct-Mar,Winter,Budget,9.1,26.4897,74.5511
+535,"Kamakhya Devi Tantric Temple, Guwahati",Assam,Religious,Oct-Apr,Winter,Budget,9.3,26.1667,91.7047

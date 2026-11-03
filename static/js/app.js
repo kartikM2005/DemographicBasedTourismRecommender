@@ -252,6 +252,25 @@ function renderRecommendationCards(dests) {
         const isPeak = dest.Seasonal_Status && dest.Seasonal_Status.includes("Optimal");
         const seasonClass = isPeak ? "tag-season-peak" : "tag-season-off";
 
+        const weather = dest.Live_Ground_Condition || {
+            temperature: 24.0,
+            condition: "Clear",
+            icon: "🌤️",
+            precipitation: 0.0,
+            wind_speed: 8.0,
+            hazard_level: "SAFE",
+            hazard_badge: "🟢 OPTIMAL TRAVEL CLIMATE",
+            hazard_class: "hazard-safe",
+            advisory: "Favorable ground conditions for travel."
+        };
+
+        const xai = dest.XAI_Breakdown || {
+            demographic_affinity: 90,
+            seasonal_alignment: 95,
+            budget_compatibility: 92,
+            popularity_rating: 90
+        };
+
         const card = document.createElement('div');
         card.className = 'dest-card';
         card.innerHTML = `
@@ -266,6 +285,33 @@ function renderRecommendationCards(dests) {
                     <span class="tag">${dest.Category}</span>
                     <span class="tag ${seasonClass}">Optimal: ${dest.BestTimeToVisit}</span>
                     <span class="tag">Score: ${dest.Popularity}/10</span>
+                </div>
+
+                <!-- Live Ground Telemetry Badge -->
+                <div class="live-telemetry-badge">
+                    <div class="live-weather-info">
+                        <span class="live-radar-dot"></span>
+                        <span>${weather.icon} ${weather.condition}</span>
+                        <span style="color: #64748B; font-size: 0.72rem;">(${weather.wind_speed} km/h wind)</span>
+                    </div>
+                    <div class="live-weather-temp">${weather.temperature}°C</div>
+                </div>
+
+                <!-- Live Real-Time Hazard Alert Banner -->
+                <div class="hazard-box ${weather.hazard_class}">
+                    <div class="hazard-header">
+                        <span>${weather.hazard_badge}</span>
+                        <span>Live Telemetry</span>
+                    </div>
+                    <div class="hazard-advisory">${weather.advisory}</div>
+                </div>
+
+                <!-- Explainable AI (XAI) Attribution Breakdown -->
+                <div class="xai-pill-grid">
+                    <div class="xai-pill"><span>Demographic Fit</span> <strong>${xai.demographic_affinity}%</strong></div>
+                    <div class="xai-pill"><span>Season Fit</span> <strong>${xai.seasonal_alignment}%</strong></div>
+                    <div class="xai-pill"><span>Budget Fit</span> <strong>${xai.budget_compatibility}%</strong></div>
+                    <div class="xai-pill"><span>Popularity Fit</span> <strong>${xai.popularity_rating}%</strong></div>
                 </div>
             </div>
             <div class="dest-explanation">

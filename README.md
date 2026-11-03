@@ -136,3 +136,4 @@ Generates top-$N$ personalized tourist recommendations.
 * **Authors:** I. Marzuki, D. Hindarto, F. N. Fiqri, N. Nurhidayati, Y. M. Arif, R. F. Rachmadi, M. Hariadi  
 * **Journal:** *International Journal of Intelligent Engineering and Systems* (IJIES), Vol. 18, No. 4, pp. 219–232, 2025.  
 * **DOI:** [10.22266/ijies2025.0531.14](https://doi.org/10.22266/ijies2025.0531.14)
+

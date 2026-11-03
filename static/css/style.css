@@ -1076,3 +1076,131 @@ label {
 .footer-container p {
     margin: 4px 0;
 }
+
+/* ================= LIVE GROUND TELEMETRY & HAZARD ALERT ================= */
+.live-telemetry-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 10px 0 8px 0;
+    font-size: 0.78rem;
+}
+
+.live-weather-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.live-weather-temp {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--color-plum);
+}
+
+.live-radar-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10B981;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.hazard-box {
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    transition: all 0.2s ease;
+}
+
+.hazard-box.hazard-safe {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #065F46;
+}
+
+.hazard-box.hazard-warning {
+    background: rgba(245, 158, 11, 0.10);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: #92400E;
+}
+
+.hazard-box.hazard-high {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.55);
+    color: #991B1B;
+}
+
+.hazard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.hazard-advisory {
+    font-size: 0.76rem;
+    font-weight: 500;
+}
+
+/* ================= EXPLAINABLE AI (XAI) FACTOR BARS ================= */
+.xai-attribution-toggle {
+    background: transparent;
+    border: none;
+    color: var(--color-plum);
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 0;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.xai-attribution-toggle:hover {
+    text-decoration: underline;
+}
+
+.xai-pill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    background: #FAF8FB;
+    border: 1px solid #ECE7EF;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.xai-pill {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+.xai-pill strong {
+    color: var(--color-plum);
+}
+
