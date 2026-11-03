@@ -1204,3 +1204,157 @@ label {
     color: var(--color-plum);
 }
 
+/* ================= DYNAMIC ITINERARY & BUDGET ACCORDION ================= */
+.btn-itinerary-toggle {
+    width: 100%;
+    background: #FAF8FB;
+    border: 1px dashed var(--color-plum);
+    color: var(--color-plum);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-itinerary-toggle:hover {
+    background: rgba(97, 45, 83, 0.08);
+}
+
+.btn-itinerary-toggle .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn-itinerary-toggle.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.itinerary-drawer {
+    display: none;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.itinerary-drawer.open {
+    display: block;
+    animation: fadeInSlide 0.3s ease;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.itinerary-section-title {
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-charcoal);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Timeline */
+.timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+    position: relative;
+    padding-left: 14px;
+    border-left: 2px solid rgba(97, 45, 83, 0.15);
+}
+
+.timeline-step {
+    position: relative;
+}
+
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    left: -19px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-plum);
+    border: 2px solid #FFFFFF;
+}
+
+.timeline-step-title {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--color-plum);
+    margin-bottom: 2px;
+}
+
+.timeline-step-desc {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Budget Allocation Grid */
+.budget-box {
+    background: #FDFCFE;
+    border: 1px solid #EBE6F0;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.budget-badge-pill {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #065F46;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    margin-bottom: 6px;
+}
+
+.budget-alloc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.budget-alloc-card {
+    background: #FFFFFF;
+    border: 1px solid #EDE8F2;
+    border-radius: 6px;
+    padding: 6px 8px;
+}
+
+.budget-alloc-label {
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.budget-alloc-amount {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-plum);
+    margin-top: 2px;
+}
+
+

@@ -6,11 +6,13 @@ An intelligent, context-aware tourism recommendation engine powered by a **KNN-B
 
 ## 🌟 Key Highlights & Novel Contributions
 * **KNN-Stacking Ensemble Architecture:** Integrates multi-scale $k$-Nearest Neighbors base learners ($k=3, 5, 7, 9$) with Random Forest, synthesized via a **Logistic Regression** meta-classifier to eliminate hyperparameter sensitivity.
-* **4 Indian Travel Seasons:** Incorporates dynamic seasonal context (Winter, Summer, Monsoon, Post-Monsoon) to prevent out-of-season recommendations (e.g. mountain cloudbursts in monsoon or desert heat in peak summer).
-* **Demographic & Socio-Economic Profiling:** Factors in user age, gender, budget tier (Low, Medium, High), spending amount, trip duration, and travel group dynamics (Solo, Friends, Family, Couple).
-* **Ranked Top-N Hybrid Scoring Engine:** Transforms conventional single-class prediction into a ranked recommendation list with dynamic **Match Percentages** and personalized **Explanations**.
-* **National Catalog Scope:** Scaled from the base paper's 14 local municipal spots to **175+ curated Indian tourist destinations** spanning diverse categories (Nature, Adventure, Heritage, Spiritual, Hill Stations, Beaches, and Wildlife).
-* **Interactive Full-Stack Web Application:** Built with Flask, vanilla JavaScript, modern responsive CSS UI, and REST API endpoints.
+* **Real-Time Live Ground Telemetry & Hazard Intelligence:** Live meteorological queries via Open-Meteo for real-time temperature, precipitation, wind speed, and terrain-specific risk alerts (mountain landslide hazard, thunderstorm warnings, extreme heat advisories, and coastal surf advisories).
+* **Explainable AI (XAI) Attribution Breakdown:** Transparent 4-factor scoring on each destination card (Demographic Fit, Seasonal Alignment, Budget Compatibility, and Historical Popularity).
+* **Dynamic Day-by-Day Itinerary Planner:** Synthesizes an intelligent, customized day-by-day travel schedule tailored to the traveler's exact trip duration (2 to 10 days) and companion group.
+* **Smart Financial Budget Decomposition:** Decomposes user spending into itemized allocations: Accommodation (40%), Transit (25%), Dining (20%), and Sightseeing (15%) with automated financial feasibility status.
+* **4 Indian Travel Seasons:** Incorporates dynamic seasonal context (Winter, Summer, Monsoon, Post-Monsoon) to prevent out-of-season recommendations.
+* **National Catalog Scope:** Scaled from the base paper's 14 local municipal spots to **175+ curated Indian tourist destinations** with GPS coordinates across all Indian States & UTs.
+* **Interactive Full-Stack Web Application:** Built with Flask, vanilla JavaScript, responsive modern CSS UI, and REST API endpoints.
 
 ---
 
@@ -32,6 +34,8 @@ Evaluated on the unified demographic dataset using 80/20 stratified splitting an
 ```
 ├── app.py                            # Flask web application server & REST APIs
 ├── recommender_engine.py             # Core hybrid recommendation inference engine
+├── weather_service.py                # Real-time meteorological telemetry & hazard alerts
+├── itinerary_service.py              # Dynamic day-by-day planner & budget decomposition
 ├── train_knn_stacking.py             # Machine learning training pipeline & evaluation
 ├── prepare_unified_dataset.py        # Dataset merging & preprocessing pipeline
 ├── expand_catalog_150.py             # Catalog generator (175+ Indian destinations)

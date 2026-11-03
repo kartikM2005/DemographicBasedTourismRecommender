@@ -168,3 +168,4 @@ if __name__ == "__main__":
     res_hampi = get_live_weather(15.3350, 76.4600, "Hampi UNESCO Ruins", "Karnataka", "Cultural")
     print("\nHampi (Karnataka):")
     print(json.dumps(res_hampi, indent=2))
+

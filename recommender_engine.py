@@ -3,6 +3,7 @@ import numpy as np
 import pickle
 import os
 from weather_service import get_live_weather
+from itinerary_service import generate_itinerary
 
 class TourismRecommender:
     def __init__(self, models_dir="models", data_dir="data"):
@@ -110,7 +111,11 @@ class TourismRecommender:
         scored_dests = sorted(scored_dests, key=lambda x: x["Match_Percentage"], reverse=True)
         top_dests = scored_dests[:top_n]
         
-        # Enrich the Top-N recommendations with Live Weather & Real-Time Hazard Alerts
+        # Enrich the Top-N recommendations with Live Weather, Real-Time Hazard Alerts, and Custom Itinerary
+        trip_duration = int(user_profile.get("Avg_Trip_Duration", 5))
+        trip_spending = float(user_profile.get("Spending_Amount", 25000.0))
+        trip_group = str(user_profile.get("Travel_Group_Type", "Friends"))
+
         for d in top_dests:
             d["Live_Ground_Condition"] = get_live_weather(
                 d["Latitude"],
@@ -118,6 +123,15 @@ class TourismRecommender:
                 d["Name"],
                 d["State"],
                 d["Category"]
+            )
+            d["Itinerary"] = generate_itinerary(
+                dest_name=d["Name"],
+                state=d["State"],
+                category=d["Category"],
+                duration=trip_duration,
+                group_type=trip_group,
+                spending=trip_spending,
+                budget_tier=d["Budget_Tier"]
             )
         
         return {

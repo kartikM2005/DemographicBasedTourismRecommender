@@ -204,3 +204,4 @@ df["Longitude"] = lons
 df.to_csv("data/enriched_destinations.csv", index=False)
 print(f"Successfully enriched all {len(df)} destinations with exact coordinates!")
 print(df[["DestinationID", "Name", "State", "Latitude", "Longitude"]].head(8))
+

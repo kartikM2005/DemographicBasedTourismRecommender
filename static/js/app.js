@@ -271,6 +271,49 @@ function renderRecommendationCards(dests) {
             popularity_rating: 90
         };
 
+        const itinerary = dest.Itinerary || {
+            days_count: 5,
+            schedule: [
+                { day: 1, title: "Day 1: Arrival & Orientation", description: "Arrive at destination, check into hotel, and evening local exploration." },
+                { day: 2, title: "Day 2: Landmark & Cultural Tour", description: "Visit prime heritage monuments and cultural centers." },
+                { day: 3, title: "Day 3: Outdoor & Scenic Excursion", description: "Explore scenic natural viewpoints and local culinary hotspots." },
+                { day: 4, title: "Day 4: Leisure & Local Craft Stroll", description: "Market visits and souvenir craft shopping." },
+                { day: 5, title: "Day 5: Farewell & Departure", description: "Morning breakfast, packing memories, and check-out." }
+            ],
+            budget_breakdown: {
+                total_budget: 20000,
+                daily_average: 4000,
+                per_night_stay: 2000,
+                accommodation: { amount: 8000, percentage: 40, label: "Hotels & Stays" },
+                transport: { amount: 5000, percentage: 25, label: "Transit & Cabs" },
+                food: { amount: 4000, percentage: 20, label: "Dining & Food" },
+                activities: { amount: 3000, percentage: 15, label: "Sightseeing" },
+                feasibility_badge: "🟢 COMFORTABLE BUDGET FIT",
+                feasibility_status: "Ideal balance of stays and touring."
+            }
+        };
+
+        const budget = itinerary.budget_breakdown || {
+            total_budget: 20000,
+            per_night_stay: 2000,
+            accommodation: { amount: 8000, percentage: 40 },
+            transport: { amount: 5000, percentage: 25 },
+            food: { amount: 4000, percentage: 20 },
+            activities: { amount: 3000, percentage: 15 },
+            feasibility_badge: "🟢 COMFORTABLE BUDGET FIT",
+            feasibility_status: "Ideal balance of stays and touring."
+        };
+
+        let timelineHtml = '';
+        if (itinerary.schedule && itinerary.schedule.length > 0) {
+            timelineHtml = itinerary.schedule.map(step => `
+                <div class="timeline-step">
+                    <div class="timeline-step-title">${step.title}</div>
+                    <div class="timeline-step-desc">${step.description}</div>
+                </div>
+            `).join('');
+        }
+
         const card = document.createElement('div');
         card.className = 'dest-card';
         card.innerHTML = `
@@ -313,6 +356,53 @@ function renderRecommendationCards(dests) {
                     <div class="xai-pill"><span>Budget Fit</span> <strong>${xai.budget_compatibility}%</strong></div>
                     <div class="xai-pill"><span>Popularity Fit</span> <strong>${xai.popularity_rating}%</strong></div>
                 </div>
+
+                <!-- Custom Itinerary & Smart Budget Toggle Button -->
+                <button class="btn-itinerary-toggle" onclick="toggleItinerary(this)">
+                    <span>📅 ${itinerary.days_count}-Day Custom Itinerary & Budget</span>
+                    <span class="toggle-icon">▼</span>
+                </button>
+
+                <!-- Itinerary & Budget Collapsible Drawer -->
+                <div class="itinerary-drawer">
+                    <!-- Budget Section -->
+                    <div class="budget-box">
+                        <div class="itinerary-section-title">
+                            <span>💰 Smart Budget Split (₹${budget.total_budget.toLocaleString()})</span>
+                        </div>
+                        <div class="budget-badge-pill">${budget.feasibility_badge}</div>
+                        <div style="font-size: 0.72rem; color: #64748B; margin-bottom: 6px;">${budget.feasibility_status}</div>
+                        <div class="budget-alloc-grid">
+                            <div class="budget-alloc-card">
+                                <div class="budget-alloc-label"><span>🏨 Stays (${budget.accommodation.percentage}%)</span></div>
+                                <div class="budget-alloc-amount">₹${budget.accommodation.amount.toLocaleString()}</div>
+                                <div style="font-size: 0.65rem; color: #94A3B8;">~₹${budget.per_night_stay.toLocaleString()}/night</div>
+                            </div>
+                            <div class="budget-alloc-card">
+                                <div class="budget-alloc-label"><span>🚗 Transit (${budget.transport.percentage}%)</span></div>
+                                <div class="budget-alloc-amount">₹${budget.transport.amount.toLocaleString()}</div>
+                            </div>
+                            <div class="budget-alloc-card">
+                                <div class="budget-alloc-label"><span>🍽️ Dining (${budget.food.percentage}%)</span></div>
+                                <div class="budget-alloc-amount">₹${budget.food.amount.toLocaleString()}</div>
+                            </div>
+                            <div class="budget-alloc-card">
+                                <div class="budget-alloc-label"><span>🎟️ Passes (${budget.activities.percentage}%)</span></div>
+                                <div class="budget-alloc-amount">₹${budget.activities.amount.toLocaleString()}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day-by-Day Timeline Section -->
+                    <div style="margin-top: 10px;">
+                        <div class="itinerary-section-title">
+                            <span>📅 Day-by-Day Schedule</span>
+                        </div>
+                        <div class="timeline-list">
+                            ${timelineHtml}
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="dest-explanation">
                 ${dest.Explanation}
@@ -324,6 +414,21 @@ function renderRecommendationCards(dests) {
     const countText = document.getElementById('results-count-text');
     if (countText) {
         countText.innerText = `Displaying ${dests.length} personalized recommendations`;
+    }
+}
+
+// Toggle Itinerary & Budget Collapsible Drawer
+function toggleItinerary(btn) {
+    if (!btn) return;
+    const drawer = btn.nextElementSibling;
+    if (!drawer) return;
+    const isOpen = drawer.classList.contains('open');
+    if (isOpen) {
+        drawer.classList.remove('open');
+        btn.classList.remove('active');
+    } else {
+        drawer.classList.add('open');
+        btn.classList.add('active');
     }
 }
 
