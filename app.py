@@ -22,17 +22,25 @@ def get_recommendations():
         if not data:
             return jsonify({"error": "No input data provided"}), 400
             
-        raw_income = str(data.get("Income_Level", "Medium")).strip().capitalize()
+        spending_amount = float(data.get("Spending_Amount", 25000.0))
+        raw_income = str(data.get("Income_Level", "")).strip().capitalize()
         income_map = {"Budget": "Low", "Low": "Low", "Medium": "Medium", "Moderate": "Medium", "High": "High", "Luxury": "High"}
-        income_level = income_map.get(raw_income, "Medium")
+        income_level = income_map.get(raw_income, "")
+        if not income_level:
+            if spending_amount <= 12000.0:
+                income_level = "Low"
+            elif spending_amount >= 45000.0:
+                income_level = "High"
+            else:
+                income_level = "Medium"
 
         # Parse inputs with defaults
         user_profile = {
             "Age": int(data.get("Age", 25)),
             "Gender": str(data.get("Gender", "Male")),
             "Income_Level": income_level,
-            "Spending_Amount": float(data.get("Spending_Amount", 2500.0)),
-            "Avg_Trip_Duration": int(data.get("Avg_Trip_Duration", 7)),
+            "Spending_Amount": spending_amount,
+            "Avg_Trip_Duration": int(data.get("Avg_Trip_Duration", 6)),
             "Travel_Group_Type": str(data.get("Travel_Group_Type", "Friends")),
             "Travel_Season": str(data.get("Travel_Season", "Winter"))
         }

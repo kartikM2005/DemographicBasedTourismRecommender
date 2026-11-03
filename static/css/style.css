@@ -430,6 +430,75 @@ label {
     background: var(--color-plum);
 }
 
+/* Budget Number Input */
+.budget-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.currency-prefix {
+    position: absolute;
+    left: 14px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-plum);
+    pointer-events: none;
+}
+
+.budget-number-input {
+    width: 100%;
+    padding: 10px 14px 10px 32px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--color-charcoal);
+    background: var(--bg-input);
+    border: 1.5px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.budget-number-input:focus {
+    border-color: var(--color-plum);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(97, 45, 83, 0.1);
+}
+
+.budget-quick-pills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.btn-budget-pill {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 6px 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-align: center;
+}
+
+.btn-budget-pill:hover {
+    border-color: var(--color-mauve);
+    color: var(--color-plum);
+    background: #FFFFFF;
+}
+
+.btn-budget-pill.active {
+    background: rgba(97, 45, 83, 0.09);
+    border-color: var(--color-plum);
+    color: var(--color-plum);
+    font-weight: 700;
+}
+
 /* Radio Pill Group */
 .radio-pill-group {
     display: grid;

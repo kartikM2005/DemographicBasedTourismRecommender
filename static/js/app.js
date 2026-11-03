@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
             updateRangeDisplay('input-duration', 'duration-display', ' days');
         });
     }
+
+    updateBudgetDisplay();
 });
 
 // Tab Switcher
@@ -74,32 +76,67 @@ function loadPersona(type) {
     if (type === 'student_friends') {
         setSlider('input-age', 'age-display', 21, ' years');
         setRadio('gender', 'Male');
-        setRadio('income', 'Medium');
+        setBudgetValue(12000);
         setActiveBtn('group-type-selector', 'Friends');
         setActiveBtn('season-selector', 'Winter');
         setSlider('input-duration', 'duration-display', 5, ' days');
     } else if (type === 'family_summer') {
         setSlider('input-age', 'age-display', 42, ' years');
         setRadio('gender', 'Female');
-        setRadio('income', 'Medium');
+        setBudgetValue(45000);
         setActiveBtn('group-type-selector', 'Family');
         setActiveBtn('season-selector', 'Summer');
         setSlider('input-duration', 'duration-display', 7, ' days');
     } else if (type === 'senior_pilgrimage') {
         setSlider('input-age', 'age-display', 65, ' years');
         setRadio('gender', 'Male');
-        setRadio('income', 'Low');
+        setBudgetValue(15000);
         setActiveBtn('group-type-selector', 'Couple');
         setActiveBtn('season-selector', 'Winter');
         setSlider('input-duration', 'duration-display', 10, ' days');
     } else if (type === 'solo_adventure') {
         setSlider('input-age', 'age-display', 26, ' years');
         setRadio('gender', 'Other');
-        setRadio('income', 'High');
+        setBudgetValue(25000);
         setActiveBtn('group-type-selector', 'Solo');
         setActiveBtn('season-selector', 'Monsoon');
         setSlider('input-duration', 'duration-display', 4, ' days');
     }
+}
+
+function setBudgetValue(val) {
+    const input = document.getElementById('input-budget');
+    if (input) {
+        input.value = val;
+        updateBudgetDisplay();
+    }
+}
+
+function updateBudgetDisplay() {
+    const input = document.getElementById('input-budget');
+    const display = document.getElementById('budget-tier-display');
+    const pills = document.querySelectorAll('.btn-budget-pill');
+    if (!input) return;
+
+    const val = parseFloat(input.value) || 0;
+    let tier = 'Moderate Tier';
+    if (val <= 12000) tier = 'Budget Tier';
+    else if (val <= 35000) tier = 'Moderate Tier';
+    else if (val <= 70000) tier = 'Premium Tier';
+    else tier = 'Luxury Tier';
+
+    if (display) {
+        display.innerText = `${tier} (₹${val.toLocaleString()})`;
+    }
+
+    pills.forEach(p => {
+        const match = p.getAttribute('onclick') ? p.getAttribute('onclick').match(/\d+/) : null;
+        if (match) {
+            const pillVal = parseInt(match[0]);
+            if (Math.abs(pillVal - val) < 500) p.classList.add('active');
+            else p.classList.remove('active');
+        }
+    });
 }
 
 function setSlider(id, displayId, val, unit) {
@@ -129,19 +166,20 @@ function setActiveBtn(containerId, val) {
 async function submitRecommendation() {
     const ageElem = document.getElementById('input-age');
     const genderElem = document.querySelector('input[name="gender"]:checked');
-    const incomeElem = document.querySelector('input[name="income"]:checked');
     const durationElem = document.getElementById('input-duration');
+    const budgetElem = document.getElementById('input-budget');
 
     const age = ageElem ? parseInt(ageElem.value) : 25;
     const gender = genderElem ? genderElem.value : 'Male';
-    const income = incomeElem ? incomeElem.value : 'Medium';
     const group = getSelectedVal('group-type-selector') || 'Friends';
     const season = getSelectedVal('season-selector') || 'Winter';
     const duration = durationElem ? parseInt(durationElem.value) : 6;
+    const spending = budgetElem ? (parseFloat(budgetElem.value) || 25000.0) : 25000.0;
 
-    let spending = 2500.0;
-    if (income === 'Low') spending = 1200.0;
-    else if (income === 'High') spending = 4200.0;
+    // Dynamically derive Income Tier from real numerical budget in INR
+    let income = 'Medium';
+    if (spending <= 12000) income = 'Low';
+    else if (spending >= 45000) income = 'High';
 
     const payload = {
         Age: age,

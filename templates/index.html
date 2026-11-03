@@ -163,23 +163,22 @@
                             </div>
                         </div>
 
-                        <!-- Budget & Income Tier -->
+                        <!-- Budget in Numbers & Trip Duration -->
                         <div class="form-row-2">
                             <div class="form-group">
-                                <label>Income Level / Budget Tier</label>
-                                <div class="radio-pill-group">
-                                    <label class="radio-pill">
-                                        <input type="radio" name="income" value="Low">
-                                        <span>Budget</span>
-                                    </label>
-                                    <label class="radio-pill">
-                                        <input type="radio" name="income" value="Medium" checked>
-                                        <span>Medium</span>
-                                    </label>
-                                    <label class="radio-pill">
-                                        <input type="radio" name="income" value="High">
-                                        <span>Luxury</span>
-                                    </label>
+                                <div class="label-row">
+                                    <label for="input-budget">Total Trip Budget</label>
+                                    <span class="range-display" id="budget-tier-display">Moderate Tier</span>
+                                </div>
+                                <div class="budget-input-wrapper">
+                                    <span class="currency-prefix">₹</span>
+                                    <input type="number" id="input-budget" class="budget-number-input" min="2000" max="500000" step="500" value="25000" placeholder="e.g. 25000" oninput="updateBudgetDisplay()">
+                                </div>
+                                <div class="budget-quick-pills">
+                                    <button type="button" class="btn-budget-pill" onclick="setBudgetValue(10000)">₹10k (Budget)</button>
+                                    <button type="button" class="btn-budget-pill active" onclick="setBudgetValue(25000)">₹25k (Moderate)</button>
+                                    <button type="button" class="btn-budget-pill" onclick="setBudgetValue(50000)">₹50k (Premium)</button>
+                                    <button type="button" class="btn-budget-pill" onclick="setBudgetValue(100000)">₹1L (Luxury)</button>
                                 </div>
                             </div>
 
