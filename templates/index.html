@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demographic-Based Tourism Recommender System | SDMCET CSE</title>
+    <meta name="description" content="AI-driven personalized tourism recommendation system using KNN-Stacking ensemble architecture with demographic profiling and seasonal context awareness.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js for Viva & Model Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css?v=5">
+</head>
+<body>
+    <!-- Top Academic Header -->
+    <header class="academic-topbar">
+        <div class="topbar-container">
+            <div class="college-info">
+                <span class="badge-accent">SDMCET CSE</span>
+                <span class="college-name">SDM College of Engineering & Technology, Dharwad</span>
+                <span class="bullet">•</span>
+                <span class="course-code">VII Sem Major Project – I (22UCSL702)</span>
+            </div>
+            <div class="guide-tag">
+                <span>Under the Guidance of: <strong>Prof. Prathap Kumar M K</strong></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <div class="brand-group">
+                <div class="brand-logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 19 21 12 17 5 21 12 2"></polygon>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="brand-title">TourVibe AI</h1>
+                    <p class="brand-subtitle">Demographic & Seasonal Tourism Recommender</p>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <button class="nav-tab active" id="tab-btn-recommender" onclick="switchTab('recommender')">
+                    AI Recommender
+                </button>
+                <button class="nav-tab" id="tab-btn-analytics" onclick="switchTab('analytics')">
+                    Model Analytics & Viva
+                </button>
+                <button class="nav-tab" id="tab-btn-catalog" onclick="switchTab('catalog')">
+                    Destinations Catalog
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        <!-- ================= TAB 1: RECOMMENDER STUDIO ================= -->
+        <section id="recommender-section" class="tab-content active">
+            <!-- Hero Banner -->
+            <div class="hero-card" style="background-image: linear-gradient(130deg, rgba(44, 44, 44, 0.95) 15%, rgba(97, 45, 83, 0.90) 65%, rgba(133, 57, 83, 0.85) 100%), url('/static/images/hero_banner.jpg');">
+                <div class="hero-inner">
+                    <span class="hero-badge">Marzuki et al. (2025) Enhanced Architecture</span>
+                    <h2 class="hero-heading">Personalized Indian Travel Discovery Powered by KNN Stacking</h2>
+                    <p class="hero-desc">
+                        Overcoming static demographic recommenders with our <strong>Seasonal-Aware Hybrid Ensemble</strong>.
+                        Input your demographic profile and intended travel season to generate optimized, ranked Indian destinations with confidence scoring.
+                    </p>
+                    <div class="preset-group">
+                        <span class="preset-label">Quick Test Personas:</span>
+                        <button class="preset-pill" onclick="loadPersona('student_friends')">Young Friends (Winter Beach)</button>
+                        <button class="preset-pill" onclick="loadPersona('family_summer')">Family (Summer Hill Station)</button>
+                        <button class="preset-pill" onclick="loadPersona('senior_pilgrimage')">Seniors (Winter Heritage)</button>
+                        <button class="preset-pill" onclick="loadPersona('solo_adventure')">Solo Explorer (Monsoon Nature)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommender Layout (Form + Live Predictions) -->
+            <div class="recommender-grid">
+                <!-- Left: Profiling Input Form -->
+                <div class="panel-card form-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3 class="panel-title">Tourist Demographic Profiling</h3>
+                            <p class="panel-subtitle">Configure traveler attributes and temporal travel context</p>
+                        </div>
+                    </div>
+
+                    <form id="recommender-form" onsubmit="event.preventDefault(); submitRecommendation();">
+                        <!-- Age Slider -->
+                        <div class="form-group">
+                            <div class="label-row">
+                                <label for="input-age">Traveler Age</label>
+                                <span class="range-display" id="age-display">25 years</span>
+                            </div>
+                            <input type="range" id="input-age" min="18" max="75" value="25" class="slider-control" oninput="updateRangeDisplay('input-age', 'age-display', ' years')">
+                        </div>
+
+                        <!-- Gender Selector -->
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio-pill-group">
+                                <label class="radio-pill">
+                                    <input type="radio" name="gender" value="Male" checked>
+                                    <span>Male</span>
+                                </label>
+                                <label class="radio-pill">
+                                    <input type="radio" name="gender" value="Female">
+                                    <span>Female</span>
+                                </label>
+                                <label class="radio-pill">
+                                    <input type="radio" name="gender" value="Other">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Travel Group Type -->
+                        <div class="form-group">
+                            <label>Travel Companion / Group Dynamics</label>
+                            <div class="grid-selector" id="group-type-selector">
+                                <button type="button" class="select-btn active" data-val="Friends" onclick="selectOption('group-type-selector', this)">
+                                    <span>Friends</span>
+                                </button>
+                                <button type="button" class="select-btn" data-val="Family" onclick="selectOption('group-type-selector', this)">
+                                    <span>Family</span>
+                                </button>
+                                <button type="button" class="select-btn" data-val="Couple" onclick="selectOption('group-type-selector', this)">
+                                    <span>Couple</span>
+                                </button>
+                                <button type="button" class="select-btn" data-val="Solo" onclick="selectOption('group-type-selector', this)">
+                                    <span>Solo</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Travel Season (Our Innovation) -->
+                        <div class="form-group highlight-season-box">
+                            <div class="season-box-header">
+                                <label class="season-label">Intended Travel Season</label>
+                                <span class="season-chip">Novel Context Feature</span>
+                            </div>
+                            <div class="grid-selector" id="season-selector">
+                                <button type="button" class="select-btn active" data-val="Winter" onclick="selectOption('season-selector', this)">
+                                    <span>Winter (Nov–Feb)</span>
+                                </button>
+                                <button type="button" class="select-btn" data-val="Summer" onclick="selectOption('season-selector', this)">
+                                    <span>Summer (Mar–Jun)</span>
+                                </button>
+                                <button type="button" class="select-btn" data-val="Monsoon" onclick="selectOption('season-selector', this)">
+                                    <span>Monsoon (Jul–Sep)</span>
+                                </button>
+                                <button type="button" class="select-btn" data-val="Post-Monsoon" onclick="selectOption('season-selector', this)">
+                                    <span>Post-Monsoon (Oct)</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Budget & Income Tier -->
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label>Income Level / Budget Tier</label>
+                                <div class="radio-pill-group">
+                                    <label class="radio-pill">
+                                        <input type="radio" name="income" value="Low">
+                                        <span>Budget</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="income" value="Medium" checked>
+                                        <span>Medium</span>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="income" value="High">
+                                        <span>Luxury</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="label-row">
+                                    <label for="input-duration">Trip Duration</label>
+                                    <span class="range-display" id="duration-display">6 days</span>
+                                </div>
+                                <input type="range" id="input-duration" min="2" max="20" value="6" class="slider-control" oninput="updateRangeDisplay('input-duration', 'duration-display', ' days')">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="btn-submit-recommend" class="btn-primary-action">
+                            <span>Generate AI Recommendations</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Output Recommendation Cards & Affinity Radar -->
+                <div class="results-container">
+                    <!-- Predicted Affinity Breakdown -->
+                    <div class="panel-card affinity-card">
+                        <div class="affinity-header">
+                            <div>
+                                <h3 class="panel-title">Model Category Affinity Probabilities</h3>
+                                <p class="panel-subtitle">Predicted class distributions from the KNN-Stacking ensemble</p>
+                            </div>
+                            <span class="model-badge">KNN-Stacking (k=3,5,7,9 + LR)</span>
+                        </div>
+                        <div class="affinity-bars" id="affinity-bars-container">
+                            <div class="affinity-bar-item">
+                                <div class="affinity-bar-label">
+                                    <span>Beach & Leisure</span>
+                                    <strong id="prob-leisure">—</strong>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill fill-cyan" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="affinity-bar-item">
+                                <div class="affinity-bar-label">
+                                    <span>Nature & Hill Stations</span>
+                                    <strong id="prob-nature">—</strong>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill fill-emerald" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="affinity-bar-item">
+                                <div class="affinity-bar-label">
+                                    <span>Adventure & Trekking</span>
+                                    <strong id="prob-adventure">—</strong>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill fill-amber" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="affinity-bar-item">
+                                <div class="affinity-bar-label">
+                                    <span>Cultural & Heritage</span>
+                                    <strong id="prob-cultural">—</strong>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill fill-purple" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="affinity-bar-item">
+                                <div class="affinity-bar-label">
+                                    <span>Religious & Pilgrimage</span>
+                                    <strong id="prob-religious">—</strong>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill fill-rose" style="width: 0%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Destination Cards -->
+                    <div class="destinations-header-row">
+                        <div>
+                            <h3 class="results-title">Top-Ranked Recommendations</h3>
+                            <p class="results-subtitle" id="results-count-text">Click "Generate AI Recommendations" to compute rankings</p>
+                        </div>
+                        <div class="quick-filter-pills" id="results-filter">
+                            <button class="pill-btn active" onclick="filterResults('All', this)">All</button>
+                            <button class="pill-btn" onclick="filterResults('Karnataka', this)">Karnataka Specials</button>
+                            <button class="pill-btn" onclick="filterResults('Peak', this)">Optimal Season Only</button>
+                        </div>
+                    </div>
+
+                    <!-- Cards Container -->
+                    <div class="cards-grid" id="recommendation-cards-container">
+                        <div class="empty-state-card">
+                            <h4 class="empty-state-title">Ready to Discover Destinations</h4>
+                            <p class="empty-state-text">Configure your demographic profile and intended travel season on the left, then click <strong>Generate AI Recommendations</strong> to run the KNN-Stacking ensemble.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 2: VIVA & MODEL ANALYTICS ================= -->
+        <section id="analytics-section" class="tab-content">
+            <!-- Academic Benchmark Card -->
+            <div class="panel-card viva-intro-card">
+                <div class="viva-badge">Literature Validation & Comparative Benchmark</div>
+                <h2 class="viva-title">Evaluation Analysis: Base Paper vs. Proposed KNN-Stacking</h2>
+                <p class="viva-desc">
+                    Replicating and expanding upon <strong>Marzuki et al. (2025)</strong>: 
+                    <em>“A KNN-Based Stacking for Tourism Destination Recommender System Based on User Demographic Data”</em>, 
+                    published in the <strong>International Journal of Intelligent Engineering and Systems</strong> (Vol. 18, No. 4, pp. 219–232).
+                </p>
+            </div>
+
+            <!-- Metrics Grid -->
+            <div class="metrics-stat-grid">
+                <div class="metric-card">
+                    <span class="metric-label">Proposed Stacking Accuracy</span>
+                    <div class="metric-val text-cyan">85.98%</div>
+                    <span class="metric-sub">Directly validates Marzuki et al. (86.89%)</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Weighted Precision</span>
+                    <div class="metric-val text-purple">86.06%</div>
+                    <span class="metric-sub">High precision across all 5 classes</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Weighted Recall</span>
+                    <div class="metric-val text-emerald">85.98%</div>
+                    <span class="metric-sub">Comprehensive demographic coverage</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Weighted F1-Score</span>
+                    <div class="metric-val text-amber">85.62%</div>
+                    <span class="metric-sub">Optimal harmonic mean balance</span>
+                </div>
+            </div>
+
+            <!-- Two Column Chart & Table Layout -->
+            <div class="viva-charts-grid">
+                <!-- Left: Chart.js Bar Chart -->
+                <div class="panel-card">
+                    <h3 class="panel-title">Model Performance Comparison (%)</h3>
+                    <p class="panel-subtitle">Evaluated on 492 test samples with Stratified 5-Fold Cross Validation</p>
+                    <div class="chart-wrapper">
+                        <canvas id="modelComparisonChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Right: Research Comparison Matrix Table -->
+                <div class="panel-card">
+                    <h3 class="panel-title">Literature Comparison Table</h3>
+                    <p class="panel-subtitle">Benchmark against standard baseline classifiers</p>
+                    <div class="table-container">
+                        <table class="academic-table">
+                            <thead>
+                                <tr>
+                                    <th>Algorithm</th>
+                                    <th>Accuracy</th>
+                                    <th>Precision</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="metrics-table-body">
+                                <tr>
+                                    <td>Baseline KNN (k=5)</td>
+                                    <td>77.03%</td>
+                                    <td>77.52%</td>
+                                    <td>77.03%</td>
+                                    <td>76.36%</td>
+                                </tr>
+                                <tr>
+                                    <td>Decision Tree</td>
+                                    <td>85.37%</td>
+                                    <td>85.34%</td>
+                                    <td>85.37%</td>
+                                    <td>85.25%</td>
+                                </tr>
+                                <tr>
+                                    <td>Random Forest</td>
+                                    <td>85.57%</td>
+                                    <td>85.81%</td>
+                                    <td>85.57%</td>
+                                    <td>84.90%</td>
+                                </tr>
+                                <tr class="highlight-row">
+                                    <td><strong>Proposed KNN Stacking Ensemble</strong></td>
+                                    <td><strong>85.98%</strong></td>
+                                    <td><strong>86.06%</strong></td>
+                                    <td><strong>85.98%</strong></td>
+                                    <td><strong>85.62%</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Limitations Addressed by Our Project (Key Viva Defense) -->
+            <div class="panel-card" style="margin-top: 24px;">
+                <h3 class="panel-title">Research Contributions: Overcoming Base Paper Limitations</h3>
+                <p class="panel-subtitle">Key architectural advancements implemented for Prof. Prathap Kumar M K's evaluation</p>
+                <div class="contributions-grid">
+                    <div class="contrib-box">
+                        <div class="contrib-tag tag-red">Limitation #1 in Marzuki et al.</div>
+                        <h4 class="contrib-title">Static Demographic Features Only (No Temporal/Seasonal Awareness)</h4>
+                        <p class="contrib-desc">
+                            Tourism destination suitability shifts dramatically between seasons. A hill station or beach has completely different visitor experiences in Monsoon vs. Winter.
+                        </p>
+                        <div class="solution-pill">
+                            <strong>Our Solution:</strong> Feature-engineered Indian seasonal windows into training inputs & re-ranking multipliers.
+                        </div>
+                    </div>
+
+                    <div class="contrib-box">
+                        <div class="contrib-tag tag-red">Limitation #2 in Marzuki et al.</div>
+                        <h4 class="contrib-title">Single-Class Classification (No Ranked Top-N List)</h4>
+                        <p class="contrib-desc">
+                            Base paper only outputs one broad category class rather than a practical, user-facing ranked recommendation list with match confidence percentages.
+                        </p>
+                        <div class="solution-pill">
+                            <strong>Our Solution:</strong> Extended the Stacking ensemble to output Top-N ranked destinations with composite scoring (60%–98.5%).
+                        </div>
+                    </div>
+
+                    <div class="contrib-box">
+                        <div class="contrib-tag tag-red">Limitation #3 in Marzuki et al.</div>
+                        <h4 class="contrib-title">Ignored Financial Constraints & Group Types</h4>
+                        <p class="contrib-desc">
+                            Two users with the same age/gender have different travel behaviors depending on budget levels and whether traveling solo, as a couple, or with family.
+                        </p>
+                        <div class="solution-pill">
+                            <strong>Our Solution:</strong> Synthesized budget tiers (`Low, Medium, Luxury`) and companion dynamics into the feature pipeline.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 3: DESTINATIONS CATALOG ================= -->
+        <section id="catalog-section" class="tab-content">
+            <div class="catalog-header-bar">
+                <div>
+                    <h2 class="panel-title">Curated Indian Destination Catalog (175 Destinations)</h2>
+                    <p class="panel-subtitle">Covering 39 Karnataka landmarks, Western Ghats, Himalayas, Coastal circuits, and National gems across India</p>
+                </div>
+                <!-- Catalog Filters -->
+                <div class="catalog-filters">
+                    <select id="catalog-category-filter" class="custom-select" onchange="loadCatalog()">
+                        <option value="All">All Categories</option>
+                        <option value="Cultural">Cultural & Heritage</option>
+                        <option value="Leisure">Beach & Leisure</option>
+                        <option value="Nature">Nature & Hill Stations</option>
+                        <option value="Adventure">Adventure & Trekking</option>
+                        <option value="Religious">Religious & Pilgrimage</option>
+                    </select>
+                    <select id="catalog-season-filter" class="custom-select" onchange="loadCatalog()">
+                        <option value="All">All Seasons</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Monsoon">Monsoon</option>
+                        <option value="Post-Monsoon">Post-Monsoon</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Destination Catalog Grid -->
+            <div class="catalog-grid" id="catalog-grid-container">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>© 2026-27 Department of Computer Science & Engineering, SDM College of Engineering & Technology, Dharwad.</p>
+            <p>Developed by Kartik Magadum, Kumar M, Madan Gowda G B, Zahid Rashid Bhat under Prof. Prathap Kumar M K</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/app.js?v=5"></script>
+</body>
+</html>

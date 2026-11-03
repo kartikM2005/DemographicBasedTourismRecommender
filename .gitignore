@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Environments
+.env
+
+# Temporary extraction files
+synopsis_extracted.txt
+marzuki_paper_extracted.txt
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
