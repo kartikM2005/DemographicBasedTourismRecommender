@@ -11,7 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Chart.js for Viva & Model Analytics -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/static/css/style.css?v=5">
+    <!-- Leaflet.js for Real Interactive India Geospatial Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <link rel="stylesheet" href="/static/css/style.css?v=6">
 </head>
 <body>
     <!-- Top Academic Header -->
@@ -259,6 +262,19 @@
                             <button class="pill-btn" onclick="filterResults('Karnataka', this)">Karnataka Specials</button>
                             <button class="pill-btn" onclick="filterResults('Peak', this)">Optimal Season Only</button>
                         </div>
+                    </div>
+
+                    <!-- Interactive Real India Geospatial Map Container -->
+                    <div id="india-map-card" class="panel-card map-card" style="display: none; margin-bottom: 20px; padding: 14px;">
+                        <div class="map-card-header">
+                            <div class="map-card-title">
+                                <span class="live-radar-dot"></span>
+                                <strong>🗺️ Interactive India Travel Map</strong>
+                                <span style="font-size: 0.75rem; color: #64748B; font-weight: normal;">(Plotting Recommended Hubs with Live Weather)</span>
+                            </div>
+                            <button type="button" class="btn-map-reset" onclick="resetMapView()">Reset View</button>
+                        </div>
+                        <div id="indiaMap" style="height: 380px; width: 100%; border-radius: 8px; border: 1px solid #E2E8F0; z-index: 1;"></div>
                     </div>
 
                     <!-- Cards Container -->

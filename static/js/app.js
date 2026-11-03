@@ -43,6 +43,8 @@ function switchTab(tabName) {
 
     if (tabName === 'analytics') {
         setTimeout(initComparisonChart, 150);
+    } else if (tabName === 'recommender' && leafletMap) {
+        setTimeout(() => leafletMap.invalidateSize(), 150);
     }
 }
 
@@ -214,6 +216,7 @@ async function submitRecommendation() {
             updateAffinityBars(res.data.predicted_affinities);
             currentRecommendations = res.data.top_recommendations;
             renderRecommendationCards(currentRecommendations);
+            initOrUpdateIndiaMap(currentRecommendations);
         } else {
             console.error("API error message:", res.message);
         }
@@ -480,12 +483,123 @@ function filterResults(filterType, btnElement) {
 
     if (filterType === 'All') {
         renderRecommendationCards(currentRecommendations);
+        initOrUpdateIndiaMap(currentRecommendations);
     } else if (filterType === 'Karnataka') {
         const filtered = currentRecommendations.filter(d => d.State.toLowerCase().includes('karnataka'));
         renderRecommendationCards(filtered);
+        initOrUpdateIndiaMap(filtered);
     } else if (filterType === 'Peak') {
         const filtered = currentRecommendations.filter(d => d.Seasonal_Status && d.Seasonal_Status.includes('Optimal'));
         renderRecommendationCards(filtered);
+        initOrUpdateIndiaMap(filtered);
+    }
+}
+
+// Real Interactive India Geospatial Map Logic (Leaflet.js)
+let leafletMap = null;
+let mapMarkersGroup = null;
+
+function initOrUpdateIndiaMap(dests) {
+    const mapCard = document.getElementById('india-map-card');
+    if (!mapCard) return;
+
+    if (typeof L === 'undefined') {
+        console.warn("Leaflet library not loaded, skipping map render");
+        return;
+    }
+
+    if (!dests || dests.length === 0) {
+        mapCard.style.display = 'none';
+        return;
+    }
+
+    try {
+        mapCard.style.display = 'block';
+
+        if (!leafletMap) {
+            // Real Center of India coordinates: [22.5, 82.0], Zoom 5
+            leafletMap = L.map('indiaMap', {
+                scrollWheelZoom: false,
+                attributionControl: true
+            }).setView([22.5, 82.0], 5);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}.png', {
+                maxZoom: 18,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(leafletMap);
+
+            mapMarkersGroup = L.featureGroup().addTo(leafletMap);
+        }
+
+        mapMarkersGroup.clearLayers();
+
+        const colorMap = {
+            'Leisure': '#0284c7',
+            'Nature': '#059669',
+            'Adventure': '#d97706',
+            'Cultural': '#7c3aed',
+            'Religious': '#e11d48'
+        };
+
+        const iconMap = {
+            'Leisure': '🏖️',
+            'Nature': '🌲',
+            'Adventure': '🧗',
+            'Cultural': '🏛️',
+            'Religious': '🛕'
+        };
+
+        dests.forEach(d => {
+            const lat = parseFloat(d.Latitude);
+            const lon = parseFloat(d.Longitude);
+            if (isNaN(lat) || isNaN(lon)) return;
+
+            const color = colorMap[d.Category] || '#612D53';
+            const icon = iconMap[d.Category] || '📍';
+            const weather = d.Live_Ground_Condition || {};
+
+            const customHtml = `<div class="custom-pin-marker" style="background-color: ${color};" title="${d.Name}">${icon}</div>`;
+            const customIcon = L.divIcon({
+                className: 'custom-leaflet-marker',
+                html: customHtml,
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+                popupAnchor: [0, -16]
+            });
+
+            const popupHtml = `
+                <div class="map-popup-card">
+                    <div class="map-popup-title">${d.Name}</div>
+                    <div class="map-popup-meta">${d.State} • <strong>${d.Category}</strong></div>
+                    <div class="map-popup-temp">${weather.icon || '🌤️'} ${weather.temperature || 25}°C • ${weather.condition || 'Clear'}</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+                        <span class="map-popup-match">${d.Match_Percentage}% Match</span>
+                        <span style="font-size: 0.72rem; color: #64748B;">₹${(d.Itinerary?.budget_breakdown?.total_budget || 25000).toLocaleString()}</span>
+                    </div>
+                </div>
+            `;
+
+            const marker = L.marker([lat, lon], { icon: customIcon }).bindPopup(popupHtml);
+            mapMarkersGroup.addLayer(marker);
+        });
+
+        if (mapMarkersGroup.getLayers().length > 0) {
+            leafletMap.fitBounds(mapMarkersGroup.getBounds().pad(0.18));
+        }
+
+        setTimeout(() => {
+            if (leafletMap) leafletMap.invalidateSize();
+        }, 150);
+    } catch (e) {
+        console.error("Map initialization notice:", e);
+    }
+}
+
+function resetMapView() {
+    if (leafletMap && mapMarkersGroup && mapMarkersGroup.getLayers().length > 0) {
+        leafletMap.fitBounds(mapMarkersGroup.getBounds().pad(0.18));
+    } else if (leafletMap) {
+        leafletMap.setView([22.5, 82.0], 5);
     }
 }
 
