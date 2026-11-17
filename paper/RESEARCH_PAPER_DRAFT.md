@@ -8,7 +8,7 @@
 * **Kumar M** (USN: 2SD23CS050) — *Dept. of Computer Science & Engineering, SDM College of Engineering & Technology, Dharwad, India*
 * **Madan Gowda G B** (USN: 2SD23CS051) — *Dept. of Computer Science & Engineering, SDM College of Engineering & Technology, Dharwad, India*
 * **Zahid Rashid Bhat** (USN: 2SD23CS129) — *Dept. of Computer Science & Engineering, SDM College of Engineering & Technology, Dharwad, India*
-* **Prof. Prathap Kumar M K** (Project Guide) — *Assistant Professor, Dept. of Computer Science & Engineering, SDM College of Engineering & Technology, Dharwad, India*
+* *Under the Guidance of:* **Prathap Kumar M K†** — *Assistant Professor, Dept. of Computer Science & Engineering, SDM College of Engineering & Technology, Dharwad, India*
 
 ---
 
@@ -195,3 +195,4 @@ The authors express their sincere gratitude to the Department of Computer Scienc
 21. K. H. Lim, J. Chan, D. Leckie, and S. Karunasekera, "Personalized Tour Recommendation Based on User Interests and Time Constraints," *Information Sciences*, vol. 488, pp. 51–69, 2019. [DOI: 10.1016/j.ins.2018.11.050](http://dx.doi.org/10.1016/j.ins.2018.11.050)
 22. T. De Pessemier, S. Dooms, and L. Martens, "Context-Aware Recommendation of Items with a Short Lifetime," *Computers in Human Behavior*, vol. 65, pp. 252–263, 2016. [DOI: 10.1016/j.chb.2016.03.024](http://dx.doi.org/10.1016/j.chb.2016.03.024)
 23. F. Ricci, L. Rokach, and B. Shapira, *Recommender Systems Handbook*, 3rd ed., New York, NY: Springer, 2022. [DOI: 10.1007/978-1-0716-2197-4](http://dx.doi.org/10.1007/978-1-0716-2197-4)
+
